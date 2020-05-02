@@ -1,0 +1,47 @@
+version: '2'
+
+services:
+  user_search_db:
+    image: postgres
+    restart: always
+    ports:
+      - 5401:5432
+    environment:
+      POSTGRES_DB: user_search_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: welcome
+    volumes:
+      - ./db/user_search_db:/var/lib/postgresql/data
+  vehicle_info_db:
+    image: postgres
+    restart: always
+    ports:
+      - 5402:5432
+    environment:
+      POSTGRES_DB: vehicle_info_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: welcome
+    volumes:
+      - ./db/vehicle_info_db:/var/lib/postgresql/data
+  user_db:
+    image: postgres
+    restart: always
+    ports:
+      - 5403:5432
+    environment:
+      POSTGRES_DB: user_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: welcome
+    volumes:
+      - ./db/user_db:/var/lib/postgresql/data
+  session_db:
+    image: postgres
+    restart: always
+    ports:
+      - 5404:5432
+    environment:
+      POSTGRES_DB: session_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: welcome
+    volumes:
+      - ./db/session_db:/var/lib/postgresql/data
