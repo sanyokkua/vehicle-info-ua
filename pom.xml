@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<name>parent</name>
@@ -27,22 +27,23 @@
 		<spring-cloud.version>Hoxton.SR4</spring-cloud.version>
 
 		<versions-maven-plugin.version>2.7</versions-maven-plugin.version>
-		<versions-maven-plugin.rulesUri>file://${project.basedir}/maven-version-rules.xml</versions-maven-plugin.rulesUri>
+		<versions-maven-plugin.rulesUri>file://${project.basedir}/maven-version-rules.xml
+		</versions-maven-plugin.rulesUri>
 	</properties>
 
 	<modules>
-        <module>api_gateway</module>
-        <module>authentication_service</module>
-        <module>data_import</module>
-        <module>data_import_registration_service</module>
-        <module>data_import_koatuu_service</module>
-        <module>discovery_service</module>
-        <module>rest_app_management_service</module>
-        <module>rest_search_service</module>
-        <module>rest_user_search_service</module>
-        <module>rest_user_service</module>
-    </modules>
-
+		<module>api_gateway</module>
+		<module>authentication_service</module>
+		<module>data_import</module>
+		<module>data_import_registration_service</module>
+		<module>data_import_koatuu_service</module>
+		<module>data_import_service_center_service</module>
+		<module>discovery_service</module>
+		<module>rest_app_management_service</module>
+		<module>rest_search_service</module>
+		<module>rest_user_search_service</module>
+		<module>rest_user_service</module>
+	</modules>
 
 
 	<dependencyManagement>
