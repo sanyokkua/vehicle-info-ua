@@ -31,15 +31,17 @@
 	</properties>
 
 	<modules>
-		<module>api_gateway</module>
-		<module>authentication_service</module>
-		<module>data_import_service</module>
-		<module>discovery_service</module>
-		<module>rest_app_management_service</module>
-		<module>rest_search_service</module>
-		<module>rest_user_search_service</module>
-		<module>rest_user_service</module>
-	</modules>
+        <module>api_gateway</module>
+        <module>authentication_service</module>
+        <module>data_import</module>
+        <module>data_import_registration_service</module>
+        <module>data_import_koatuu_service</module>
+        <module>discovery_service</module>
+        <module>rest_app_management_service</module>
+        <module>rest_search_service</module>
+        <module>rest_user_search_service</module>
+        <module>rest_user_service</module>
+    </modules>
 
 
 
