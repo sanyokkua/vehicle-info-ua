@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collections;
@@ -13,7 +14,6 @@ import java.util.stream.Collectors;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.io.FileUtils;
 import ua.vehicle.info.aspects.annotations.LogExceptions;
 import ua.vehicle.info.aspects.annotations.LogInputOutput;
 import ua.vehicle.info.aspects.annotations.LogTimeMeasures;
@@ -65,7 +65,8 @@ public class ParseUrlsFromJsonTask implements Task<Path, List<URL>> {
         if (Files.exists(path)) {
             var encoding = fileUtilsService.getEncoding(path);
             try {
-                return FileUtils.readFileToString(path.toFile(), encoding);
+                var bytes = Files.readAllBytes(path);
+                return new String(bytes, Charset.forName(encoding));
             } catch (IOException e) {
                 log.error("getTextFromFile: Problem with reading path: " + path.toString() +
                         " with encoding: " + encoding);
