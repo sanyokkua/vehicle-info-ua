@@ -1,6 +1,7 @@
 package ua.vehicle.info.config;
 
 import com.google.gson.Gson;
+import org.apache.commons.csv.CSVRecord;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import ua.vehicle.info.dto.RegistrationRecord;
@@ -10,7 +11,7 @@ import ua.vehicle.info.processing.jobs.GetCsvPathTask;
 import ua.vehicle.info.processing.jobs.ParseUrlsFromJsonTask;
 import ua.vehicle.info.processing.processor.tasks.DeleteFilesTask;
 import ua.vehicle.info.processing.processor.tasks.DownloadFileTask;
-import ua.vehicle.info.processing.processor.tasks.PersistCsvRecordTask;
+import ua.vehicle.info.processing.processor.tasks.PersistRecordTask;
 import ua.vehicle.info.processing.processor.tasks.ReadCsvFileTask;
 import ua.vehicle.info.processing.processor.tasks.UnzipTask;
 import ua.vehicle.info.services.FileUtilsService;
@@ -39,10 +40,10 @@ public class BeansConfiguration {
     }
 
     @Bean
-    public PersistCsvRecordTask<RegistrationRecord> persistRegistrationRecordTask(
+    public PersistRecordTask<CSVRecord, RegistrationRecord> persistRegistrationRecordTask(
             CsvRecordToRegistrationMapper csvRecordToRegistrationMapper,
             RegistrationPersister registrationPersister) {
-        return new PersistCsvRecordTask<>(csvRecordToRegistrationMapper, registrationPersister);
+        return new PersistRecordTask<>(csvRecordToRegistrationMapper, registrationPersister);
     }
 
     @Bean

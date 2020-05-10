@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.Collections;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.csv.CSVRecord;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import ua.vehicle.info.aspects.annotations.LogExceptions;
@@ -14,7 +15,7 @@ import ua.vehicle.info.processing.jobs.GetCsvPathTask;
 import ua.vehicle.info.processing.jobs.ParseUrlsFromJsonTask;
 import ua.vehicle.info.processing.processor.tasks.DeleteFilesTask;
 import ua.vehicle.info.processing.processor.tasks.DownloadFileTask;
-import ua.vehicle.info.processing.processor.tasks.PersistCsvRecordTask;
+import ua.vehicle.info.processing.processor.tasks.PersistRecordTask;
 import ua.vehicle.info.processing.processor.tasks.ReadCsvFileTask;
 import ua.vehicle.info.processing.processor.tasks.UnzipTask;
 
@@ -28,7 +29,7 @@ public class RegistrationProcessing {
     private final UnzipTask step4UnArchiveZip;
     private final ReadCsvFileTask step6ReadCsvFile;
     @Qualifier("persistRegistrationRecordTask")
-    private final PersistCsvRecordTask<RegistrationRecord> step7PersistRecordsFromCsv;
+    private final PersistRecordTask<CSVRecord, RegistrationRecord> step7PersistRecordsFromCsv;
     private final GetCsvPathTask step5getCsvPathTask;
     private final DeleteFilesTask stepLastDeleteFilesTask;
 
@@ -38,7 +39,7 @@ public class RegistrationProcessing {
     public void processing(URL url) {
         var jsonPath = step1DownloadJsonWithUrls.process(url);
         var urlsMap = step2ParseUrlsInJson.process(jsonPath);
-        urlsMap.forEach((archiveUrl) -> {
+        urlsMap.forEach(archiveUrl -> {
             var archivePath = step3DownloadArchiveForUrl.process(archiveUrl);
             var csvFileFolder = step4UnArchiveZip.process(archivePath);
             var csvFile = step5getCsvPathTask.process(csvFileFolder);

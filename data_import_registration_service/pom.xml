@@ -14,18 +14,8 @@
     <description>Provide functionality for importing registration Data from Government resources</description>
 
     <properties>
-        <db.host>localhost</db.host>
-        <db.port>5402</db.port>
-        <db.name>vehicle_info_db</db.name>
-        <db.username>admin</db.username>
-        <db.password>welcome</db.password>
-
         <java.version>11</java.version>
-        <juniversalchardet.version>2.3.0</juniversalchardet.version>
         <commons-csv.version>1.6</commons-csv.version>
-        <org.mapstruct.version>1.3.1.Final</org.mapstruct.version>
-        <zip4j.version>1.3.2</zip4j.version>
-        <commons-io.version>2.6</commons-io.version>
         <data.import.version>0.0.1-SNAPSHOT</data.import.version>
     </properties>
 

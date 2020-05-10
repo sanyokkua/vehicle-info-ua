@@ -3,10 +3,14 @@ package ua.vehicle.info.config;
 import com.google.gson.Gson;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import ua.vehicle.info.dto.AdminUnitRecord;
+import ua.vehicle.info.processing.AdminUnitPersister;
+import ua.vehicle.info.processing.jobs.ParseRecordsTask;
+import ua.vehicle.info.processing.mappers.Mapper;
+import ua.vehicle.info.processing.persistance.Persister;
 import ua.vehicle.info.processing.processor.tasks.DeleteFilesTask;
 import ua.vehicle.info.processing.processor.tasks.DownloadFileTask;
-import ua.vehicle.info.processing.processor.tasks.ReadCsvFileTask;
-import ua.vehicle.info.processing.processor.tasks.UnzipTask;
+import ua.vehicle.info.processing.processor.tasks.PersistRecordTask;
 import ua.vehicle.info.services.FileUtilsService;
 
 @Configuration
@@ -18,13 +22,25 @@ public class BeansConfiguration {
     }
 
     @Bean
-    public ReadCsvFileTask readCsvFileTask(FileUtilsService fileUtilsService) {
-        return new ReadCsvFileTask(fileUtilsService);
+    public ParseRecordsTask parseRecordsTask(Gson gson) {
+        return new ParseRecordsTask(gson);
     }
 
     @Bean
-    public UnzipTask unzipTask(FileUtilsService fileUtilsService) {
-        return new UnzipTask(fileUtilsService);
+    public PersistRecordTask<AdminUnitRecord, AdminUnitRecord> persistRecordTask(
+            Mapper<AdminUnitRecord, AdminUnitRecord> mapper,
+            Persister<AdminUnitRecord> persister) {
+        return new PersistRecordTask<>(mapper, persister);
+    }
+
+    @Bean
+    public Mapper<AdminUnitRecord, AdminUnitRecord> mapper() {
+        return unit -> unit;
+    }
+
+    @Bean
+    public Persister<AdminUnitRecord> persister() {
+        return new AdminUnitPersister();
     }
 
     @Bean

@@ -3,7 +3,6 @@ package ua.vehicle.info.processing.processor.tasks;
 import java.util.Iterator;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.apache.commons.csv.CSVRecord;
 import ua.vehicle.info.aspects.annotations.LogExceptions;
 import ua.vehicle.info.aspects.annotations.LogInputOutput;
 import ua.vehicle.info.aspects.annotations.LogTimeMeasures;
@@ -13,16 +12,16 @@ import ua.vehicle.info.processing.persistance.Persister;
 import ua.vehicle.info.processing.processor.Task;
 
 @RequiredArgsConstructor
-public class PersistCsvRecordTask<T> implements Task<Iterator<CSVRecord>, Void> {
+public class PersistRecordTask<I, T> implements Task<Iterator<I>, Void> {
 
-    private final Mapper<CSVRecord, T> mapper;
+    private final Mapper<I, T> mapper;
     private final Persister<T> persister;
 
     @LogTimeMeasures
     @LogInputOutput
     @LogExceptions
     @Override
-    public Void process(@NonNull Iterator<CSVRecord> input) {
+    public Void process(@NonNull Iterator<I> input) {
         input.forEachRemaining(record -> {
             T obj = map(record);
             persist(obj);
@@ -32,7 +31,7 @@ public class PersistCsvRecordTask<T> implements Task<Iterator<CSVRecord>, Void> 
 
     @SuppressRuntimeExceptions
     @LogExceptions
-    private T map(@NonNull CSVRecord input) {
+    private T map(@NonNull I input) {
         return mapper.map(input);
     }
 
