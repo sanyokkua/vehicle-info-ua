@@ -10,10 +10,10 @@ import org.jsoup.select.Elements;
 import ua.vehicle.info.aspects.annotations.LogExceptions;
 import ua.vehicle.info.aspects.annotations.LogInputOutput;
 import ua.vehicle.info.aspects.annotations.LogTimeMeasures;
-import ua.vehicle.info.dto.ServiceCenter;
+import ua.vehicle.info.dto.ServiceCenterRecord;
 import ua.vehicle.info.processing.processor.Task;
 
-public class ParseServiceCentersTask implements Task<Elements, Iterator<ServiceCenter>> {
+public class ParseServiceCentersTask implements Task<Elements, Iterator<ServiceCenterRecord>> {
 
     private static final Pattern DIGITS_ONLY = Pattern.compile("\\d+");
 
@@ -21,7 +21,7 @@ public class ParseServiceCentersTask implements Task<Elements, Iterator<ServiceC
     @LogInputOutput
     @LogExceptions
     @Override
-    public Iterator<ServiceCenter> process(Elements input) {
+    public Iterator<ServiceCenterRecord> process(Elements input) {
         return input.stream()
                 .map(this::mapToProperElements)
                 .filter(this::filterBySize)
@@ -43,7 +43,7 @@ public class ParseServiceCentersTask implements Task<Elements, Iterator<ServiceC
         return list.size() > 4;
     }
 
-    private ServiceCenter mapToServiceCenter(List<Element> list) {
+    private ServiceCenterRecord mapToServiceCenter(List<Element> list) {
         var departmentId = list.get(0).text().trim();
         var matcher = DIGITS_ONLY.matcher(departmentId);
         long depId = 0;
@@ -52,6 +52,6 @@ public class ParseServiceCentersTask implements Task<Elements, Iterator<ServiceC
         }
         var address = list.get(1).text().trim();
         var email = list.get(4).text().trim();
-        return new ServiceCenter(depId, address, email);
+        return new ServiceCenterRecord(depId, address, email);
     }
 }

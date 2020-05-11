@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import net.jodah.failsafe.RetryPolicy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ua.vehicle.info.dto.ServiceCenter;
+import ua.vehicle.info.dto.ServiceCenterRecord;
 import ua.vehicle.info.processing.ServiceCenterPersister;
 import ua.vehicle.info.processing.jobs.GetHtmlDocumentTask;
 import ua.vehicle.info.processing.jobs.GetHtmlElementWithListTask;
@@ -50,19 +50,19 @@ public class BeansConfiguration {
     }
 
     @Bean
-    public PersistRecordTask<ServiceCenter, ServiceCenter> persistRecordTask(
-            Mapper<ServiceCenter, ServiceCenter> mapper,
-            Persister<ServiceCenter> persister) {
+    public PersistRecordTask<ServiceCenterRecord, ServiceCenterRecord> persistRecordTask(
+            Mapper<ServiceCenterRecord, ServiceCenterRecord> mapper,
+            Persister<ServiceCenterRecord> persister) {
         return new PersistRecordTask<>(mapper, persister);
     }
 
     @Bean
-    public Mapper<ServiceCenter, ServiceCenter> mapper() {
+    public Mapper<ServiceCenterRecord, ServiceCenterRecord> mapper() {
         return serviceCenter -> serviceCenter;
     }
 
     @Bean
-    public Persister<ServiceCenter> persister(QueueSenderService queueSenderService) {
+    public Persister<ServiceCenterRecord> persister(QueueSenderService queueSenderService) {
         return new ServiceCenterPersister(queueSenderService);
     }
 

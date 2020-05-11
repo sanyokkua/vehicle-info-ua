@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ServiceCenter {
+public class ServiceCenterRecord {
 
     private Long centerNumber;
     private String address;
