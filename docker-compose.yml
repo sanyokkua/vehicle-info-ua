@@ -45,3 +45,15 @@ services:
       POSTGRES_PASSWORD: welcome
     volumes:
       - ./db/session_db:/var/lib/postgresql/data
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - '4369:4369'
+      - '5672:5672'
+      - '25672:25672'
+      - '15672:15672'
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: welcome
+    volumes:
+      - ./db/rabbit:/var/lib/rabbitmq

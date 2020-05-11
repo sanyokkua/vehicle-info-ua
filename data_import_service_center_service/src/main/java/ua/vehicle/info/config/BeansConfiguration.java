@@ -15,6 +15,7 @@ import ua.vehicle.info.processing.jobs.ParseServiceCentersTask;
 import ua.vehicle.info.processing.mappers.Mapper;
 import ua.vehicle.info.processing.persistance.Persister;
 import ua.vehicle.info.processing.processor.tasks.PersistRecordTask;
+import ua.vehicle.info.queues.sender.QueueSenderService;
 
 @Slf4j
 @Configuration
@@ -61,8 +62,8 @@ public class BeansConfiguration {
     }
 
     @Bean
-    public Persister<ServiceCenter> persister() {
-        return new ServiceCenterPersister();
+    public Persister<ServiceCenter> persister(QueueSenderService queueSenderService) {
+        return new ServiceCenterPersister(queueSenderService);
     }
 
 }

@@ -14,6 +14,7 @@ import ua.vehicle.info.processing.processor.tasks.DownloadFileTask;
 import ua.vehicle.info.processing.processor.tasks.PersistRecordTask;
 import ua.vehicle.info.processing.processor.tasks.ReadCsvFileTask;
 import ua.vehicle.info.processing.processor.tasks.UnzipTask;
+import ua.vehicle.info.queues.sender.QueueSenderService;
 import ua.vehicle.info.services.FileUtilsService;
 
 @Configuration
@@ -56,10 +57,6 @@ public class BeansConfiguration {
         return new GetCsvPathTask();
     }
 
-    @Bean
-    public Gson getGson() {
-        return new Gson();
-    }
 
     @Bean
     public CsvRecordToRegistrationMapper csvRecordToRegistrationMapper(Gson gson) {
@@ -67,7 +64,7 @@ public class BeansConfiguration {
     }
 
     @Bean
-    public RegistrationPersister registrationPersister() {
-        return new RegistrationPersister();
+    public RegistrationPersister registrationPersister(QueueSenderService queueSenderService) {
+        return new RegistrationPersister(queueSenderService);
     }
 }

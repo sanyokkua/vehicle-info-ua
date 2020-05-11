@@ -11,6 +11,7 @@ import ua.vehicle.info.processing.persistance.Persister;
 import ua.vehicle.info.processing.processor.tasks.DeleteFilesTask;
 import ua.vehicle.info.processing.processor.tasks.DownloadFileTask;
 import ua.vehicle.info.processing.processor.tasks.PersistRecordTask;
+import ua.vehicle.info.queues.sender.QueueSenderService;
 import ua.vehicle.info.services.FileUtilsService;
 
 @Configuration
@@ -39,17 +40,12 @@ public class BeansConfiguration {
     }
 
     @Bean
-    public Persister<AdminUnitRecord> persister() {
-        return new AdminUnitPersister();
+    public Persister<AdminUnitRecord> persister(QueueSenderService queueSenderService) {
+        return new AdminUnitPersister(queueSenderService);
     }
 
     @Bean
     public DeleteFilesTask deleteFilesTask() {
         return new DeleteFilesTask();
-    }
-
-    @Bean
-    public Gson getGson() {
-        return new Gson();
     }
 }
