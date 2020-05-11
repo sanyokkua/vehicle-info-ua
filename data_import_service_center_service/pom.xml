@@ -8,9 +8,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>data.service.center.import</artifactId>
+    <artifactId>data.import.service.center</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>data.service.center.import</name>
+    <name>data.import.service.center</name>
     <description>Provide functionality for importing service centers Data from Government resources</description>
 
     <properties>

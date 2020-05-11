@@ -8,9 +8,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>data.registration.import</artifactId>
+    <artifactId>data.import.registration</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>data.registration.import</name>
+    <name>data.import.registration</name>
     <description>Provide functionality for importing registration Data from Government resources</description>
 
     <properties>

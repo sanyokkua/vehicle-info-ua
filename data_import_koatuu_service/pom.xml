@@ -8,9 +8,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>data.koatuu.import</artifactId>
+    <artifactId>data.import.koatuu</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>data.koatuu.import</name>
+    <name>data.import.koatuu</name>
     <description>Provide functionality for importing koatuu Data from Government resources</description>
 
     <properties>
