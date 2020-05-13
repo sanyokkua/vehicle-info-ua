@@ -32,6 +32,7 @@
     </properties>
 
     <modules>
+        <module>db_liquibase_registration</module>
         <module>api_gateway</module>
         <module>authentication_service</module>
         <module>data_import</module>
