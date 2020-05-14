@@ -42,7 +42,7 @@ public class ServiceCenterQueueConfig {
             @Qualifier("serviceCenterListenerAdapter") MessageListenerAdapter listenerAdapter) {
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
         container.setConnectionFactory(connectionFactory);
-        container.setQueueNames(Queues.QUEUE_ADMIN_UNIT.getQueue());
+        container.setQueueNames(Queues.QUEUE_SERVICE_CENTER.getQueue());
         container.setMessageListener(listenerAdapter);
         return container;
     }

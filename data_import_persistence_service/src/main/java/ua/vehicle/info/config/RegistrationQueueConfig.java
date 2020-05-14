@@ -42,7 +42,7 @@ public class RegistrationQueueConfig {
             @Qualifier("registrationListenerAdapter") MessageListenerAdapter listenerAdapter) {
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
         container.setConnectionFactory(connectionFactory);
-        container.setQueueNames(Queues.QUEUE_ADMIN_UNIT.getQueue());
+        container.setQueueNames(Queues.QUEUE_REGISTRATION.getQueue());
         container.setMessageListener(listenerAdapter);
         return container;
     }

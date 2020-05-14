@@ -5,7 +5,7 @@ import org.apache.commons.csv.CSVRecord;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import ua.vehicle.info.dto.RegistrationRecord;
-import ua.vehicle.info.processing.CsvRecordToRegistrationMapper;
+import ua.vehicle.info.processing.CsvRecordToRegistrationInputMapper;
 import ua.vehicle.info.processing.RegistrationPersister;
 import ua.vehicle.info.processing.jobs.GetCsvPathTask;
 import ua.vehicle.info.processing.jobs.ParseUrlsFromJsonTask;
@@ -42,7 +42,7 @@ public class BeansConfiguration {
 
     @Bean
     public PersistRecordTask<CSVRecord, RegistrationRecord> persistRegistrationRecordTask(
-            CsvRecordToRegistrationMapper csvRecordToRegistrationMapper,
+            CsvRecordToRegistrationInputMapper csvRecordToRegistrationMapper,
             RegistrationPersister registrationPersister) {
         return new PersistRecordTask<>(csvRecordToRegistrationMapper, registrationPersister);
     }
@@ -57,10 +57,9 @@ public class BeansConfiguration {
         return new GetCsvPathTask();
     }
 
-
     @Bean
-    public CsvRecordToRegistrationMapper csvRecordToRegistrationMapper(Gson gson) {
-        return new CsvRecordToRegistrationMapper(gson);
+    public CsvRecordToRegistrationInputMapper csvRecordToRegistrationMapper(Gson gson) {
+        return new CsvRecordToRegistrationInputMapper(gson);
     }
 
     @Bean

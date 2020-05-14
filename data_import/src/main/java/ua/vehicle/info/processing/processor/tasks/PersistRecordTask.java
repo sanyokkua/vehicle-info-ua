@@ -7,14 +7,14 @@ import ua.vehicle.info.aspects.annotations.LogExceptions;
 import ua.vehicle.info.aspects.annotations.LogInputOutput;
 import ua.vehicle.info.aspects.annotations.LogTimeMeasures;
 import ua.vehicle.info.aspects.annotations.SuppressRuntimeExceptions;
-import ua.vehicle.info.processing.mappers.Mapper;
+import ua.vehicle.info.processing.mappers.InputMapper;
 import ua.vehicle.info.processing.persistance.Persister;
 import ua.vehicle.info.processing.processor.Task;
 
 @RequiredArgsConstructor
 public class PersistRecordTask<I, T> implements Task<Iterator<I>, Void> {
 
-    private final Mapper<I, T> mapper;
+    private final InputMapper<I, T> inputMapper;
     private final Persister<T> persister;
 
     @LogTimeMeasures
@@ -32,7 +32,7 @@ public class PersistRecordTask<I, T> implements Task<Iterator<I>, Void> {
     @SuppressRuntimeExceptions
     @LogExceptions
     private T map(@NonNull I input) {
-        return mapper.map(input);
+        return inputMapper.map(input);
     }
 
     @SuppressRuntimeExceptions

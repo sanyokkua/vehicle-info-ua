@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import ua.vehicle.info.dto.AdminUnitRecord;
 import ua.vehicle.info.processing.AdminUnitPersister;
 import ua.vehicle.info.processing.jobs.ParseRecordsTask;
-import ua.vehicle.info.processing.mappers.Mapper;
+import ua.vehicle.info.processing.mappers.InputMapper;
 import ua.vehicle.info.processing.persistance.Persister;
 import ua.vehicle.info.processing.processor.tasks.DeleteFilesTask;
 import ua.vehicle.info.processing.processor.tasks.DownloadFileTask;
@@ -29,13 +29,13 @@ public class BeansConfiguration {
 
     @Bean
     public PersistRecordTask<AdminUnitRecord, AdminUnitRecord> persistRecordTask(
-            Mapper<AdminUnitRecord, AdminUnitRecord> mapper,
+            InputMapper<AdminUnitRecord, AdminUnitRecord> inputMapper,
             Persister<AdminUnitRecord> persister) {
-        return new PersistRecordTask<>(mapper, persister);
+        return new PersistRecordTask<>(inputMapper, persister);
     }
 
     @Bean
-    public Mapper<AdminUnitRecord, AdminUnitRecord> mapper() {
+    public InputMapper<AdminUnitRecord, AdminUnitRecord> mapper() {
         return unit -> unit;
     }
 

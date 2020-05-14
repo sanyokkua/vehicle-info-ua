@@ -12,7 +12,7 @@ import ua.vehicle.info.processing.ServiceCenterPersister;
 import ua.vehicle.info.processing.jobs.GetHtmlDocumentTask;
 import ua.vehicle.info.processing.jobs.GetHtmlElementWithListTask;
 import ua.vehicle.info.processing.jobs.ParseServiceCentersTask;
-import ua.vehicle.info.processing.mappers.Mapper;
+import ua.vehicle.info.processing.mappers.InputMapper;
 import ua.vehicle.info.processing.persistance.Persister;
 import ua.vehicle.info.processing.processor.tasks.PersistRecordTask;
 import ua.vehicle.info.queues.sender.QueueSenderService;
@@ -51,13 +51,13 @@ public class BeansConfiguration {
 
     @Bean
     public PersistRecordTask<ServiceCenterRecord, ServiceCenterRecord> persistRecordTask(
-            Mapper<ServiceCenterRecord, ServiceCenterRecord> mapper,
+            InputMapper<ServiceCenterRecord, ServiceCenterRecord> inputMapper,
             Persister<ServiceCenterRecord> persister) {
-        return new PersistRecordTask<>(mapper, persister);
+        return new PersistRecordTask<>(inputMapper, persister);
     }
 
     @Bean
-    public Mapper<ServiceCenterRecord, ServiceCenterRecord> mapper() {
+    public InputMapper<ServiceCenterRecord, ServiceCenterRecord> mapper() {
         return serviceCenter -> serviceCenter;
     }
 

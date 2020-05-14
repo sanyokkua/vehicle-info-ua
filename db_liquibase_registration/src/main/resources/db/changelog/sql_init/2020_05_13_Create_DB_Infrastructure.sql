@@ -2,7 +2,7 @@ CREATE SCHEMA IF NOT EXISTS ua_vehicle_info;
 
 CREATE TABLE IF NOT EXISTS ua_vehicle_info.admin_unit
        (
-       unit_number BIGINT NOT NULL,
+       unit_number VARCHAR(255) NOT NULL,
        level1_code VARCHAR(255),
        level2_code VARCHAR(255),
        level3_code VARCHAR(255),
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS ua_vehicle_info.registration
        reg_id SERIAL NOT NULL,
        purpose VARCHAR(255),
        dep_code INT,
-       admin_unit BIGINT,
+       admin_unit VARCHAR(255),
        oper_code INT NOT NULL,
        vehicle_id INT NOT NULL,
        reg_date DATE,

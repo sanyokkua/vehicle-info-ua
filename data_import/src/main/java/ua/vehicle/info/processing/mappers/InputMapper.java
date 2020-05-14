@@ -1,6 +1,6 @@
 package ua.vehicle.info.processing.mappers;
 
-public interface Mapper<I, O> {
+public interface InputMapper<I, O> {
 
     O map(I input);
 }

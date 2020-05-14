@@ -26,9 +26,10 @@ public class LogExecutionTimeAspect {
         var finish = LocalTime.now();
         var method = joinPoint.toShortString();
         var duration = Duration.between(start, finish);
-        log.info("Method: {}, start time: {}, finish time: {}", method, start, finish);
-        log.info("Method: {}, execution time: in min - {}, in sec - {}, in millis - {}, in nano - {}",
+        log.info("JoinPoint: {}, start: {}, finish: {}, time: in min - {}, in sec - {}, in millis - {}, in nano - {}",
                 method,
+                start,
+                finish,
                 duration.toMinutes(),
                 duration.toSeconds(),
                 duration.toMillis(),

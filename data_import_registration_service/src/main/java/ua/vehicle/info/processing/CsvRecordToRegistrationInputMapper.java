@@ -8,11 +8,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.csv.CSVRecord;
 import ua.vehicle.info.aspects.annotations.LogExceptions;
 import ua.vehicle.info.dto.RegistrationRecord;
-import ua.vehicle.info.processing.mappers.Mapper;
+import ua.vehicle.info.processing.mappers.InputMapper;
 
 @RequiredArgsConstructor
 @Slf4j
-public class CsvRecordToRegistrationMapper implements Mapper<CSVRecord, RegistrationRecord> {
+public class CsvRecordToRegistrationInputMapper implements InputMapper<CSVRecord, RegistrationRecord> {
 
     private final Gson gson;
 
