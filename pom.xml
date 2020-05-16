@@ -20,6 +20,8 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
+        <vehicle-app-version-general-version>0.0.1-SNAPSHOT</vehicle-app-version-general-version>
+
         <java.version>11</java.version>
         <spring-boot-admin.version>2.2.1</spring-boot-admin.version>
         <spring-cloud.version>Hoxton.SR4</spring-cloud.version>
@@ -30,6 +32,7 @@
     </properties>
 
     <modules>
+        <module>common-api/common-classes</module>
         <module>modules-liquibase/db_liquibase_registration</module>
         <module>modules-infrastructure/api_gateway</module>
         <module>modules-infrastructure/authentication_service</module>

@@ -27,6 +27,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>ua.vehicle.info</groupId>
+            <artifactId>common.classes</artifactId>
+            <version>${vehicle-app-version-general-version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>

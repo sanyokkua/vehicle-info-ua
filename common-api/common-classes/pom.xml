@@ -9,14 +9,12 @@
         <relativePath/>
     </parent>
 
-    <artifactId>data.import.common</artifactId>
+    <artifactId>common.classes</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>data.import.common</name>
-    <description>Common Classes for Data Import Services</description>
+    <name>common.classes</name>
+    <description>Common Classes for Vehicle Info Project</description>
 
     <properties>
-        <vehicle-app-version-general-version>0.0.1-SNAPSHOT</vehicle-app-version-general-version>
-
         <java.version>11</java.version>
 
         <juniversalchardet.version>2.3.0</juniversalchardet.version>
@@ -27,11 +25,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>ua.vehicle.info</groupId>
-            <artifactId>common.classes</artifactId>
-            <version>${vehicle-app-version-general-version}</version>
-        </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
