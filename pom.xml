@@ -5,7 +5,6 @@
 
     <name>parent</name>
     <description>Parent</description>
-
     <groupId>ua.vehicle.info</groupId>
     <artifactId>parent</artifactId>
 
@@ -17,7 +16,6 @@
         <version>2.2.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
 
     <version>0.0.1-SNAPSHOT</version>
 
@@ -32,19 +30,19 @@
     </properties>
 
     <modules>
-        <module>db_liquibase_registration</module>
-        <module>api_gateway</module>
-        <module>authentication_service</module>
-        <module>data_import_common</module>
-        <module>data_import_common_persistence_service</module>
-        <module>data_import_registration_service</module>
-        <module>data_import_admin_unit_service</module>
-        <module>data_import_service_center_service</module>
-        <module>discovery_service</module>
-        <module>rest_app_management_service</module>
-        <module>rest_search_service</module>
-        <module>rest_user_search_service</module>
-        <module>rest_user_service</module>
+        <module>modules-liquibase/db_liquibase_registration</module>
+        <module>modules-infrastructure/api_gateway</module>
+        <module>modules-infrastructure/authentication_service</module>
+        <module>modules-infrastructure/discovery_service</module>
+        <module>modules-data/data_import_common</module>
+        <module>modules-data/data_import_common_persistence_service</module>
+        <module>modules-data/data_import_registration_service</module>
+        <module>modules-data/data_import_admin_unit_service</module>
+        <module>modules-data/data_import_service_center_service</module>
+        <module>modules-rest/rest_app_management_service</module>
+        <module>modules-rest/rest_search_service</module>
+        <module>modules-rest/rest_user_search_service</module>
+        <module>modules-rest/rest_user_service</module>
     </modules>
 
 

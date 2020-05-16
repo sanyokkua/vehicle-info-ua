@@ -6,17 +6,19 @@
         <artifactId>parent</artifactId>
         <groupId>ua.vehicle.info</groupId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath/>
     </parent>
 
-    <artifactId>data.import.registration.service</artifactId>
+    <artifactId>data.import.service.center.service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>data.import.registration.service</name>
-    <description>Provide functionality for importing registration Data from Government resources</description>
+    <name>data.import.service.center.service</name>
+    <description>Provide functionality for importing service centers Data from Government resources</description>
 
     <properties>
         <java.version>11</java.version>
-        <commons-csv.version>1.6</commons-csv.version>
         <data.import.version>0.0.1-SNAPSHOT</data.import.version>
+        <jsoup.version>1.11.3</jsoup.version>
+        <failsafe.version>2.3.5</failsafe.version>
     </properties>
 
     <dependencies>
@@ -55,15 +57,22 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-csv</artifactId>
-            <version>${commons-csv.version}</version>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>${jsoup.version}</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
         </dependency>
+        <dependency>
+            <groupId>net.jodah</groupId>
+            <artifactId>failsafe</artifactId>
+            <version>${failsafe.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -90,7 +99,6 @@
                 </configuration>
             </plugin>
         </plugins>
-
     </build>
 
 </project>
