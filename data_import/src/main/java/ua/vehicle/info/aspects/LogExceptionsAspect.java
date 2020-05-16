@@ -19,13 +19,13 @@ public class LogExceptionsAspect extends CommonAspect {
 
     @AfterThrowing(pointcut = "logExceptions()", throwing = "ex")
     public void afterException(JoinPoint joinPoint, Exception ex) {
-        var method = joinPoint.toShortString();
+        var info = getJointPointInfo(joinPoint);
         var arguments = getArguments(joinPoint);
         var exception = ex.toString();
         var exceptionMessage = ex.getMessage();
 
-        log.error("Method {} with arguments {} has thrown exception: {}, with message: {}",
-                method, arguments, exception, exceptionMessage);
+        log.error("{} with arguments {} has thrown exception: {}, with message: {}",
+                info, arguments, exception, exceptionMessage);
         log.error("Error", ex);
     }
 

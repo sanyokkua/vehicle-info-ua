@@ -21,6 +21,7 @@ public abstract class BaseHandler<T> implements Handler<T> {
         try {
             process(obj);
         } catch (Exception ex) {
+            log.warn("Exception due processing record {}", obj, ex);
             handleException(obj);
         }
         if (Objects.nonNull(next)) {

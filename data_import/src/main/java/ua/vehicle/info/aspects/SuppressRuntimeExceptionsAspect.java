@@ -22,9 +22,8 @@ public class SuppressRuntimeExceptionsAspect extends CommonAspect {
         try {
             return joinPoint.proceed();
         } catch (RuntimeException ex) {
-            log.warn("Method: {} thrown an exception: {}, null is returned",
-                    joinPoint.toShortString(),
-                    ex.toString());
+            log.warn("JointPoint: {} thrown an exception, null is returned",
+                    getJointPointInfo(joinPoint), ex);
             return null;
         }
     }

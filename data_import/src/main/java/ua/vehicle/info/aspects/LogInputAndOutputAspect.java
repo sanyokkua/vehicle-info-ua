@@ -22,9 +22,9 @@ public class LogInputAndOutputAspect extends CommonAspect {
 
     @Before("logMethodParamsAndOutput()")
     public void before(JoinPoint joinPoint) {
-        var jointPointStr = joinPoint.toShortString();
+        var info = getJointPointInfo(joinPoint);
         var arguments = getArguments(joinPoint);
-        log.info("Method {} invoked with args: {}", jointPointStr, arguments);
+        log.info("{} invoked with args: {}", info, arguments);
     }
 
     @After("logMethodParamsAndOutput()")
@@ -34,8 +34,8 @@ public class LogInputAndOutputAspect extends CommonAspect {
 
     @AfterReturning(pointcut = "logMethodParamsAndOutput()", returning = "retVal")
     public void afterReturn(JoinPoint joinPoint, Object retVal) {
-        var jointPointStr = joinPoint.toShortString();
+        var info = getJointPointInfo(joinPoint);
         var value = Optional.ofNullable(retVal).orElse("null").toString();
-        log.info("Method {} finished, returned value is {}", jointPointStr, value);
+        log.info("{} finished, returned value is {}", info, value);
     }
 }

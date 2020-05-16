@@ -16,4 +16,10 @@ public abstract class CommonAspect {
                 .map(Object::toString)
                 .collect(Collectors.joining(","));
     }
+
+    protected String getJointPointInfo(JoinPoint joinPoint) {
+        var className = joinPoint.getTarget().getClass().getName();
+        var method = joinPoint.getSignature().getName();
+        return String.format("Class: %s, method: %s", className, method);
+    }
 }

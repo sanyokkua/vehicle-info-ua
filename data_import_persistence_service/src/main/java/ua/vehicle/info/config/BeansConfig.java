@@ -11,6 +11,7 @@ import ua.vehicle.info.listeners.RegistrationPersistListener;
 import ua.vehicle.info.listeners.ServiceCenterPersistListener;
 import ua.vehicle.info.mappers.registration.AdminUnitDtoMapper;
 import ua.vehicle.info.mappers.registration.ServiceCenterDtoMapper;
+import ua.vehicle.info.persist.ServiceCenterService;
 import ua.vehicle.info.persist.chain.adminunit.SaveAdminUnitWithLev1Handler;
 import ua.vehicle.info.persist.chain.adminunit.SaveAdminUnitWithLev2Handler;
 import ua.vehicle.info.persist.chain.adminunit.SaveAdminUnitWithLev3Handler;
@@ -43,8 +44,9 @@ public class BeansConfig {
     }
 
     @Bean
-    public OnMessageListener<ServiceCenterRecord> serviceCenterRecordOnMessageListener(ServiceCenterDtoMapper mapper) {
-        return new ServiceCenterPersistListener(mapper);
+    public OnMessageListener<ServiceCenterRecord> serviceCenterRecordOnMessageListener(ServiceCenterDtoMapper mapper,
+            ServiceCenterService service) {
+        return new ServiceCenterPersistListener(mapper, service);
     }
 
     @Bean

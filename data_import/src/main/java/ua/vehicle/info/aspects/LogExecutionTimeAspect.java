@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Aspect
 @Component
-public class LogExecutionTimeAspect {
+public class LogExecutionTimeAspect extends CommonAspect {
 
     @Pointcut("@annotation(ua.vehicle.info.aspects.annotations.LogTimeMeasures)")
     public void logExecutionTime() {
@@ -24,10 +24,10 @@ public class LogExecutionTimeAspect {
         var start = LocalTime.now();
         var proceed = joinPoint.proceed();
         var finish = LocalTime.now();
-        var method = joinPoint.toShortString();
+        var info = getJointPointInfo(joinPoint);
         var duration = Duration.between(start, finish);
         log.info("JoinPoint: {}, start: {}, finish: {}, time: in min - {}, in sec - {}, in millis - {}, in nano - {}",
-                method,
+                info,
                 start,
                 finish,
                 duration.toMinutes(),
