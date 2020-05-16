@@ -8,9 +8,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>data.import</artifactId>
+    <artifactId>data.import.common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>data.import</name>
+    <name>data.import.common</name>
     <description>Common Classes for Data Import Services</description>
 
     <properties>

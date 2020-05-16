@@ -8,9 +8,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>data.import.registration</artifactId>
+    <artifactId>data.import.registration.service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>data.import.registration</name>
+    <name>data.import.registration.service</name>
     <description>Provide functionality for importing registration Data from Government resources</description>
 
     <properties>
@@ -22,7 +22,7 @@
     <dependencies>
         <dependency>
             <groupId>ua.vehicle.info</groupId>
-            <artifactId>data.import</artifactId>
+            <artifactId>data.import.common</artifactId>
             <version>${data.import.version}</version>
         </dependency>
         <dependency>

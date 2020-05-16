@@ -8,9 +8,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>data.import.service.center</artifactId>
+    <artifactId>data.import.service.center.service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>data.import.service.center</name>
+    <name>data.import.service.center.service</name>
     <description>Provide functionality for importing service centers Data from Government resources</description>
 
     <properties>
@@ -23,7 +23,7 @@
     <dependencies>
         <dependency>
             <groupId>ua.vehicle.info</groupId>
-            <artifactId>data.import</artifactId>
+            <artifactId>data.import.common</artifactId>
             <version>${data.import.version}</version>
         </dependency>
         <dependency>

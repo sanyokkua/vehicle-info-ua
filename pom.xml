@@ -35,11 +35,11 @@
         <module>db_liquibase_registration</module>
         <module>api_gateway</module>
         <module>authentication_service</module>
-        <module>data_import</module>
+        <module>data_import_common</module>
+        <module>data_import_common_persistence_service</module>
         <module>data_import_registration_service</module>
-        <module>data_import_koatuu_service</module>
+        <module>data_import_admin_unit_service</module>
         <module>data_import_service_center_service</module>
-        <module>data_import_persistence_service</module>
         <module>discovery_service</module>
         <module>rest_app_management_service</module>
         <module>rest_search_service</module>

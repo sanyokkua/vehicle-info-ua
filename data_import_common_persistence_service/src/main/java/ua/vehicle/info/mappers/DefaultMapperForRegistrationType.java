@@ -20,7 +20,7 @@ public interface DefaultMapperForRegistrationType<T> extends DefaultMappersForTy
 
     default String fixDuplication(String source, String duplication) {
         var src = StringUtils.trim(source);
-        var fixed = StringUtils.replace(src, duplication, "");
+        var fixed = StringUtils.replace(src, duplication.trim(), "");
         return StringUtils.trimToEmpty(fixed);
     }
 }
