@@ -1,10 +1,10 @@
-package ua.vehicle.info.authentification.service;
+package ua.vehicle.info.user.service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApplicationTests {
+class UserServiceApplicationTests {
 
     @Test
     void contextLoads() {

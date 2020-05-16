@@ -15,6 +15,12 @@
     <description>Vehicle search REST Service</description>
 
     <properties>
+        <db.host>localhost</db.host>
+        <db.port>5402</db.port>
+        <db.name>vehicle_info_db</db.name>
+        <db.username>admin</db.username>
+        <db.password>welcome</db.password>
+
         <java.version>11</java.version>
     </properties>
 
@@ -26,6 +32,14 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

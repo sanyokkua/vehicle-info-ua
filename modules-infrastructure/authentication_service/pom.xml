@@ -15,6 +15,12 @@
     <description>Authentification functionality</description>
 
     <properties>
+        <db.host>localhost</db.host>
+        <db.port>5403</db.port>
+        <db.name>user_db</db.name>
+        <db.username>admin</db.username>
+        <db.password>welcome</db.password>
+
         <java.version>11</java.version>
         <spring-cloud.version>Hoxton.SR4</spring-cloud.version>
     </properties>
@@ -23,6 +29,14 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

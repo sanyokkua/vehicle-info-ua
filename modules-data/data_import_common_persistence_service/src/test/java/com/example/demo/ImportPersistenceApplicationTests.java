@@ -1,10 +1,10 @@
-package ua.vehicle.info;
+package com.example.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DataImportAdminUnitApplicationTests {
+class ImportPersistenceApplicationTests {
 
     @Test
     void contextLoads() {

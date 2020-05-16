@@ -1,10 +1,10 @@
-package ua.vehicle.info.app.management.service;
+package ua.vehicle.info;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApplicationTests {
+class ImportRegistrationApplicationTests {
 
     @Test
     void contextLoads() {
