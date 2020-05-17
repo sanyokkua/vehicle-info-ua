@@ -35,6 +35,7 @@
         <module>common-api/common-classes</module>
         <module>modules-liquibase/db_liquibase_registration</module>
         <module>modules-infrastructure/config_server_service</module>
+        <module>modules-infrastructure/inf-internal-proxy</module>
         <module>modules-infrastructure/api_gateway</module>
         <module>modules-infrastructure/authentication_service</module>
         <module>modules-infrastructure/discovery_service</module>

@@ -16,12 +16,7 @@ public class StartProcessingController {
 
     @PostMapping("/process/{serviceName}")
     public String start(@PathVariable String serviceName) {
-        var serviceInstances = informationService.findServiceInstance(serviceName);
-        var service = serviceInstances.stream()
-                .findFirst()
-                .orElseThrow(IllegalArgumentException::new);
-        var uri = service.getUri();
-        processingService.startService(uri);
+        processingService.startService(serviceName);
         return "200 Ok";
     }
 }

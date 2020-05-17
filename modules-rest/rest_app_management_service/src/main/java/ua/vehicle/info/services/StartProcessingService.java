@@ -1,6 +1,5 @@
 package ua.vehicle.info.services;
 
-import java.net.URI;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,11 +17,10 @@ public class StartProcessingService {
     @LogExceptions
     @LogInputOutput
     @SuppressRuntimeExceptions
-    public void startService(@NonNull URI serviceUri) {
+    public void startService(@NonNull String serviceName) {
         var processEndpoint = "/startProcessing";
-        var newPath = serviceUri.getPath() + processEndpoint;
-        var processUri = serviceUri.resolve(newPath);
-        restTemplate.postForObject(processUri, null, Object.class);
+        var newPath = "http://" + serviceName + processEndpoint;
+        restTemplate.postForObject(newPath, null, Object.class);
     }
 
 }
