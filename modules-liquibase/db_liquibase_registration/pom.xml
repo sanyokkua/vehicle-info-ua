@@ -16,12 +16,6 @@
 
     <properties>
         <java.version>11</java.version>
-
-        <db.host>localhost</db.host>
-        <db.port>5402</db.port>
-        <db.name>vehicle_info_db</db.name>
-        <db.username>admin</db.username>
-        <db.password>welcome</db.password>
     </properties>
 
     <dependencies>

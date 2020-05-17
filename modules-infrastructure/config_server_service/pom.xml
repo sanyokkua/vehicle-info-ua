@@ -2,7 +2,6 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <artifactId>parent</artifactId>
         <groupId>ua.vehicle.info</groupId>
@@ -10,10 +9,10 @@
         <relativePath/>
     </parent>
 
-    <artifactId>api.gateway</artifactId>
+    <artifactId>config.server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>api.gateway</name>
-    <description>API Gateway</description>
+    <name>config.server</name>
+    <description>Configuration Server for Vehicle Info Application</description>
 
     <properties>
         <java.version>11</java.version>
@@ -22,38 +21,10 @@
 
     <dependencies>
         <dependency>
-            <groupId>ua.vehicle.info</groupId>
-            <artifactId>common.classes</artifactId>
-            <version>${vehicle-app-version-general-version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
+            <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-gateway</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
