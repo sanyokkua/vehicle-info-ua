@@ -2,7 +2,6 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <artifactId>parent</artifactId>
         <groupId>ua.vehicle.info</groupId>
@@ -10,12 +9,14 @@
         <relativePath/>
     </parent>
 
-    <artifactId>vehicle-info-common-classes</artifactId>
+    <artifactId>import-common-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>vehicle-info-common-classes</name>
-    <description>Common Classes for Vehicle Info Project</description>
+    <name>import-common-api</name>
+    <description>Common Classes for Data Import Services</description>
 
     <properties>
+        <vehicle-app-version-general-version>0.0.1-SNAPSHOT</vehicle-app-version-general-version>
+
         <java.version>11</java.version>
 
         <juniversalchardet.version>2.3.0</juniversalchardet.version>
@@ -27,6 +28,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>ua.vehicle.info</groupId>
+            <artifactId>vehicle-info-common-classes</artifactId>
+            <version>${vehicle-app-version-general-version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>
@@ -34,6 +40,20 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-aspects</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.amqp</groupId>
+            <artifactId>spring-rabbit-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
