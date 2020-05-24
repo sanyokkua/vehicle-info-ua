@@ -11,8 +11,8 @@
 
     <artifactId>inf-authentification</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>inf-authentification</name>
-    <description>Authentification functionality</description>
+    <name>inf-authentication</name>
+    <description>Authentication functionality</description>
 
     <properties>
         <java.version>11</java.version>
@@ -72,10 +72,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

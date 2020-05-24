@@ -32,6 +32,7 @@ public class ServicesInformationService {
     public List<String> getAppServices() {
         return Stream.of(Services.values())
                 .map(Services::getServiceName)
+                .sorted()
                 .collect(Collectors.toList());
     }
 
@@ -39,6 +40,9 @@ public class ServicesInformationService {
     @LogInputOutput
     @SuppressRuntimeExceptions
     public List<String> getRunningAppServices() {
-        return discoveryClient.getServices();
+        return discoveryClient.getServices()
+                .stream()
+                .sorted()
+                .collect(Collectors.toList());
     }
 }
