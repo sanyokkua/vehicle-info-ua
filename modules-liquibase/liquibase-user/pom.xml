@@ -9,9 +9,9 @@
         <relativePath/>
     </parent>
 
-    <artifactId>liquibase-registration</artifactId>
+    <artifactId>liquibase-user</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>liquibase-registration</name>
+    <name>liquibase-user</name>
     <description>Creation and maintenance of DB.</description>
 
     <properties>
