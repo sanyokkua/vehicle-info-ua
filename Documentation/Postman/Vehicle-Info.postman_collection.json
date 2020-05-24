@@ -1,0 +1,128 @@
+{
+  "info": {
+    "_postman_id": "75d04912-0ead-4159-9bf8-73318accbefe",
+    "name": "Vehicle-Info",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "app-management",
+      "item": [
+        {
+          "name": "Get All Service",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8006/services",
+              "host": [
+                "localhost"
+              ],
+              "port": "8006",
+              "path": [
+                "services"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Running Services",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8006/services/running",
+              "host": [
+                "localhost"
+              ],
+              "port": "8006",
+              "path": [
+                "services",
+                "running"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Run Service import-admin-unit-service",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "localhost:8006/process/import-admin-unit-service",
+              "host": [
+                "localhost"
+              ],
+              "port": "8006",
+              "path": [
+                "process",
+                "import-admin-unit-service"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Run Service import-registration-service",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "localhost:8006/process/import-registration-service",
+              "host": [
+                "localhost"
+              ],
+              "port": "8006",
+              "path": [
+                "process",
+                "import-registration-service"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Run Service import-service-center-service",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "localhost:8006/process/import-service-center-service",
+              "host": [
+                "localhost"
+              ],
+              "port": "8006",
+              "path": [
+                "process",
+                "import-service-center-service"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "Discovery-Actuator",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "localhost:8001/",
+          "host": [
+            "localhost"
+          ],
+          "port": "8001",
+          "path": [
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
+}

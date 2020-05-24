@@ -20,6 +20,8 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
+        <vehicle-app-version-general-version>0.0.1-SNAPSHOT</vehicle-app-version-general-version>
+
         <java.version>11</java.version>
         <spring-boot-admin.version>2.2.1</spring-boot-admin.version>
         <spring-cloud.version>Hoxton.SR4</spring-cloud.version>
@@ -30,19 +32,22 @@
     </properties>
 
     <modules>
-        <module>modules-liquibase/db_liquibase_registration</module>
-        <module>modules-infrastructure/api_gateway</module>
-        <module>modules-infrastructure/authentication_service</module>
-        <module>modules-infrastructure/discovery_service</module>
-        <module>modules-data/data_import_common</module>
-        <module>modules-data/data_import_common_persistence_service</module>
-        <module>modules-data/data_import_registration_service</module>
-        <module>modules-data/data_import_admin_unit_service</module>
-        <module>modules-data/data_import_service_center_service</module>
-        <module>modules-rest/rest_app_management_service</module>
-        <module>modules-rest/rest_search_service</module>
-        <module>modules-rest/rest_user_search_service</module>
-        <module>modules-rest/rest_user_service</module>
+        <module>common-api/common-classes</module>
+        <module>modules-liquibase/liquibase-registration</module>
+        <module>modules-infrastructure/inf-configuration-service</module>
+        <module>modules-infrastructure/inf-internal-proxy</module>
+        <module>modules-infrastructure/inf-api-gateway</module>
+        <module>modules-infrastructure/inf-authentication-service</module>
+        <module>modules-infrastructure/inf-discovery-service</module>
+        <module>modules-data/import-common-api</module>
+        <module>modules-data/import-data-persistence-service</module>
+        <module>modules-data/import-registration-service</module>
+        <module>modules-data/import-admin-unit-service</module>
+        <module>modules-data/import-service-center-service</module>
+        <module>modules-rest/rest-app-management-service</module>
+        <module>modules-rest/rest-registration-search-service</module>
+        <module>modules-rest/rest-registration-search-history-service</module>
+        <module>modules-rest/rest-user-service</module>
     </modules>
 
 
