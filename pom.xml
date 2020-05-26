@@ -34,6 +34,7 @@
     <modules>
         <module>common-api/common-classes</module>
         <module>common-api/common-user-classes</module>
+        <module>common-api/common-search-classes</module>
         <module>modules-liquibase/liquibase-registration</module>
         <module>modules-liquibase/liquibase-user</module>
         <module>modules-infrastructure/inf-configuration-service</module>

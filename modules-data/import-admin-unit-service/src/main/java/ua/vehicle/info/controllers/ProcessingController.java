@@ -3,29 +3,42 @@ package ua.vehicle.info.controllers;
 import java.net.MalformedURLException;
 import java.net.URL;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 import ua.vehicle.info.aspects.annotations.LogExceptions;
 import ua.vehicle.info.aspects.annotations.LogInputOutput;
+import ua.vehicle.info.dto.ProcessingStatus;
 import ua.vehicle.info.processing.AdminUnitProcessing;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
-public class ProcessingController implements BaseController {
+public class ProcessingController extends AbstractProcessingController {
 
     private final AdminUnitProcessing adminUnitProcessing;
+    @Value("${admin.unit.url}")
+    private String adminUnitUrl;
 
     @LogExceptions
     @LogInputOutput
-    @PostMapping("/startProcessing")
+    @PostMapping(START)
     @Override
-    public void startProcessing() {
+    public ProcessingStatus startProcessing() {
+        adminUnitProcessing.setListener(super.eventListener);
         try {
-            var url =
-                    new URL("https://data.gov.ua/dataset/d945de87-539c-45b4-932a-7dda57daf8d9/resource/296adb7a-476a-40c8-9de6-211327cb3aa1/download/koatuu.json");
-            adminUnitProcessing.processing(url);
+            var url = new URL(this.adminUnitUrl);
+            return start(() -> adminUnitProcessing.processing(url));
         } catch (MalformedURLException e) {
             throw new IllegalArgumentException(e);
         }
     }
+
+    @LogExceptions
+    @LogInputOutput
+    @GetMapping(STATUS)
+    public ProcessingStatus getStatus() {
+        return buildStatus();
+    }
+
 }

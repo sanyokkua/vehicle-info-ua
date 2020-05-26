@@ -1,6 +1,6 @@
-package ua.vehicle.info.services;
+package ua.vehicle.info.api.controllers;
 
-import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,34 +9,35 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-import ua.vehicle.info.aspects.annotations.LogExceptions;
-import ua.vehicle.info.aspects.annotations.LogInputOutput;
 import ua.vehicle.info.dto.AppUser;
 
-@FeignClient("rest-user-service")
-public interface UserService {
+public interface UserManagementApi {
 
-    @LogInputOutput
-    @LogExceptions
-    @GetMapping("/user/{id}")
+    String USER_ID_MAPPING = "/user/{id}";
+    String GET_USER = USER_ID_MAPPING;
+    String GET_USER_BY_EMAIL = "/user";
+    String CREATE_USER = "/user";
+    String UPDATE_USER = USER_ID_MAPPING;
+    String DELETE_USER = USER_ID_MAPPING;
+    String USERS_LIST = "/users";
+
+    @GetMapping(GET_USER)
     AppUser getUser(@PathVariable int id);
 
-    @LogInputOutput
-    @LogExceptions
-    @GetMapping("/user")
+    @GetMapping(GET_USER_BY_EMAIL)
     AppUser getUserByEmail(@RequestParam String email);
 
-    @LogExceptions
-    @PostMapping("/user")
+    @PostMapping(CREATE_USER)
     AppUser createUser(@RequestBody AppUser appUser);
 
-    @LogExceptions
-    @PutMapping("/user/{id}")
+    @PutMapping(UPDATE_USER)
     AppUser updateUser(@RequestBody AppUser appUser, @PathVariable int id);
 
-    @LogInputOutput
-    @LogExceptions
-    @DeleteMapping("/user/{id}")
+    @DeleteMapping(DELETE_USER)
     ResponseEntity<String> deleteUser(@PathVariable int id);
 
+    @GetMapping(USERS_LIST)
+    ResponseEntity<Page<AppUser>> getUsersList(
+            @RequestParam(required = false, defaultValue = "0") int page,
+            @RequestParam(required = false, defaultValue = "10") int size);
 }

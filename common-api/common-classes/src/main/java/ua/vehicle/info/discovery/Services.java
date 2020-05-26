@@ -6,16 +6,16 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @RequiredArgsConstructor
 public enum Services {
-    INF_API_GATEWAY_SERVICE("inf-api-gateway-service"),
-    INF_AUTHENTICATION_SERVICE("inf-authentication-service"),
-    IMPORT_ADMIN_UNIT_SERVICE("import-admin-unit-service"),
-    IMPORT_PERSISTENCE_SERVICE("import-persistence-service"),
-    IMPORT_REGISTRATION_SERVICE("import-registration-service"),
-    IMPORT_SERVICE_CENTER_SERVICE("import-service-center-service"),
-    REST_APP_MANAGEMENT_SERVICE("rest-app-management-service"),
-    REST_SEARCH_SERVICE("rest-search-service"),
-    REST_USER_SEARCH_SERVICE("rest-user-search-service"),
-    REST_USER_SERVICE("rest-user-service");
+    INF_API_GATEWAY_SERVICE(ServicesNamesConstants.INF_API_GATEWAY_SERVICE),
+    INF_AUTHENTICATION_SERVICE(ServicesNamesConstants.INF_AUTHENTICATION_SERVICE),
+    IMPORT_ADMIN_UNIT_SERVICE(ServicesNamesConstants.IMPORT_ADMIN_UNIT_SERVICE),
+    IMPORT_PERSISTENCE_SERVICE(ServicesNamesConstants.IMPORT_PERSISTENCE_SERVICE),
+    IMPORT_REGISTRATION_SERVICE(ServicesNamesConstants.IMPORT_REGISTRATION_SERVICE),
+    IMPORT_SERVICE_CENTER_SERVICE(ServicesNamesConstants.IMPORT_SERVICE_CENTER_SERVICE),
+    REST_APP_MANAGEMENT_SERVICE(ServicesNamesConstants.REST_APP_MANAGEMENT_SERVICE),
+    REST_SEARCH_SERVICE(ServicesNamesConstants.REST_SEARCH_SERVICE),
+    REST_USER_SEARCH_SERVICE(ServicesNamesConstants.REST_USER_SEARCH_SERVICE),
+    REST_USER_SERVICE(ServicesNamesConstants.REST_USER_SERVICE);
 
     private final String serviceName;
 }

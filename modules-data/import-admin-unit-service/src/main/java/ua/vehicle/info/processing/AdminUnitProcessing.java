@@ -4,9 +4,6 @@ import java.net.URL;
 import java.util.Collections;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import ua.vehicle.info.aspects.annotations.LogExceptions;
-import ua.vehicle.info.aspects.annotations.LogInputOutput;
-import ua.vehicle.info.aspects.annotations.LogTimeMeasures;
 import ua.vehicle.info.dto.AdminUnitRecord;
 import ua.vehicle.info.processing.jobs.ParseRecordsTask;
 import ua.vehicle.info.processing.processor.tasks.DeleteFilesTask;
@@ -15,17 +12,15 @@ import ua.vehicle.info.processing.processor.tasks.PersistRecordTask;
 
 @Component
 @RequiredArgsConstructor
-public class AdminUnitProcessing {
+public class AdminUnitProcessing extends Processor {
 
     private final DownloadFileTask step1DownloadJson;
     private final ParseRecordsTask step2ParseRecords;
     private final PersistRecordTask<AdminUnitRecord, AdminUnitRecord> step3PersistRecords;
     private final DeleteFilesTask stepLastDeleteFilesTask;
 
-    @LogTimeMeasures
-    @LogInputOutput
-    @LogExceptions
-    public void processing(URL url) {
+    @Override
+    protected void runSteps(URL url) {
         var jsonPath = step1DownloadJson.process(url);
         var records = step2ParseRecords.process(jsonPath);
         step3PersistRecords.process(records);

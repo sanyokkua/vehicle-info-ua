@@ -8,7 +8,7 @@ import ua.vehicle.info.services.ServicesInformationService;
 
 @RestController
 @RequiredArgsConstructor
-public class ProcessingServicesInfoController {
+public class InformationController {
 
     private final ServicesInformationService service;
 

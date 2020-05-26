@@ -21,6 +21,7 @@ import ua.vehicle.info.dto.AppRole;
 import ua.vehicle.info.dto.AppUser;
 import ua.vehicle.info.dto.AuthTokeDto;
 import ua.vehicle.info.dto.AuthUserCredentialsDto;
+import ua.vehicle.info.external.UserService;
 import ua.vehicle.info.util.PasswordUtils;
 
 @Slf4j

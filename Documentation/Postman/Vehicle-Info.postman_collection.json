@@ -65,6 +65,26 @@
           "response": []
         },
         {
+          "name": "Run Service import-admin-unit-service Copy",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8006/process/import-admin-unit-service/status",
+              "host": [
+                "localhost"
+              ],
+              "port": "8006",
+              "path": [
+                "process",
+                "import-admin-unit-service",
+                "status"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
           "name": "Run Service import-registration-service",
           "request": {
             "method": "POST",
@@ -106,10 +126,10 @@
       "protocolProfileBehavior": {}
     },
     {
-      "name": "int-proxy",
+      "name": "internal-proxied",
       "item": [
         {
-          "name": "app-management proxied",
+          "name": "app-management",
           "item": [
             {
               "name": "Get All Service",
@@ -151,7 +171,7 @@
               "response": []
             },
             {
-              "name": "Run Service import-admin-unit-service",
+              "name": "Run Service import-admin-unit-service Import",
               "request": {
                 "method": "POST",
                 "header": [],
@@ -171,7 +191,28 @@
               "response": []
             },
             {
-              "name": "Run Service import-registration-service",
+              "name": "Run Service import-admin-unit-service Status",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:9999/rest-app-management-service/process/import-admin-unit-service/status",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "9999",
+                  "path": [
+                    "rest-app-management-service",
+                    "process",
+                    "import-admin-unit-service",
+                    "status"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Run Service import-registration-service Import",
               "request": {
                 "method": "POST",
                 "header": [],
@@ -191,7 +232,28 @@
               "response": []
             },
             {
-              "name": "Run Service import-service-center-service",
+              "name": "Run Service import-registration-service Status",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:9999/rest-app-management-service/process/import-registration-service/status",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "9999",
+                  "path": [
+                    "rest-app-management-service",
+                    "process",
+                    "import-registration-service",
+                    "status"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Run Service import-service-center-service Import",
               "request": {
                 "method": "POST",
                 "header": [],
@@ -205,6 +267,27 @@
                     "rest-app-management-service",
                     "process",
                     "import-service-center-service"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Run Service import-service-center-service Status",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:9999/rest-app-management-service/process/import-service-center-service/status",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "9999",
+                  "path": [
+                    "rest-app-management-service",
+                    "process",
+                    "import-service-center-service",
+                    "status"
                   ]
                 }
               },
@@ -394,7 +477,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n\t\"username\": \"admin\",\n\t\"password\": \"password\"\n}",
+                  "raw": "{\n\t\"username\": \"admin@mail.com\",\n\t\"password\": \"password\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -422,7 +505,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n\t\"token\": \"\"\n}",
+                  "raw": "{\n\t\"token\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLmNvbSIsImV4cCI6MTU5MDM1ODgyNSwiaWF0IjoxNTkwMzU4NzY1fQ.OAuclcdrjA4bLRvyQpweO-BRBcK4oMDwM-f_h-nCi-9tBm-qVdKLk46LUe6gQvnueoKoZaKLZuLqf2Rorp1goA\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -449,24 +532,6 @@
         }
       ],
       "protocolProfileBehavior": {}
-    },
-    {
-      "name": "Discovery-Actuator",
-      "request": {
-        "method": "POST",
-        "header": [],
-        "url": {
-          "raw": "localhost:8001/",
-          "host": [
-            "localhost"
-          ],
-          "port": "8001",
-          "path": [
-            ""
-          ]
-        }
-      },
-      "response": []
     }
   ],
   "protocolProfileBehavior": {}
