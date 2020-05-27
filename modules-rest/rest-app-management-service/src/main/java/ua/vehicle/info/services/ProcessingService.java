@@ -3,11 +3,10 @@ package ua.vehicle.info.services;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ua.vehicle.info.api.controllers.ProcessingControllerApi;
+import ua.vehicle.info.api.controllers.processing.ProcessingControllerApi;
 import ua.vehicle.info.api.dto.processing.ProcessingStatus;
 import ua.vehicle.info.aspects.annotations.LogExceptions;
 import ua.vehicle.info.aspects.annotations.LogInputOutput;
-import ua.vehicle.info.aspects.annotations.SuppressRuntimeExceptions;
 import ua.vehicle.info.discovery.ServicesNamesConstants;
 import ua.vehicle.info.external.AdminUnitProcessing;
 import ua.vehicle.info.external.RegistrationProcessing;
@@ -23,12 +22,13 @@ public class ProcessingService {
 
     @LogExceptions
     @LogInputOutput
-    @SuppressRuntimeExceptions
     public ProcessingStatus startService(@NonNull String serviceName) {
         var service = getServiceByName(serviceName);
         return service.startProcessing();
     }
 
+    @LogExceptions
+    @LogInputOutput
     public ProcessingStatus getStatus(@NonNull String serviceName) {
         var service = getServiceByName(serviceName);
         return service.getStatus();

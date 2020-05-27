@@ -1,4 +1,4 @@
-package ua.vehicle.info.api.controllers;
+package ua.vehicle.info.api.controllers.users;
 
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;

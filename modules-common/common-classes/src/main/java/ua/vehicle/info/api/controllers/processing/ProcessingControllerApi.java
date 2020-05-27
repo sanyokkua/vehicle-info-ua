@@ -1,4 +1,4 @@
-package ua.vehicle.info.api.controllers;
+package ua.vehicle.info.api.controllers.processing;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

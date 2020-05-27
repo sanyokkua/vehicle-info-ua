@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import ua.vehicle.info.api.controllers.UserManagementApi;
+import ua.vehicle.info.api.controllers.users.UserManagementApi;
 import ua.vehicle.info.api.dto.users.AppUser;
 import ua.vehicle.info.aspects.annotations.LogExceptions;
 import ua.vehicle.info.aspects.annotations.LogInputOutput;

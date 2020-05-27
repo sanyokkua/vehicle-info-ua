@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import lombok.Getter;
-import ua.vehicle.info.api.controllers.ProcessingControllerApi;
+import ua.vehicle.info.api.controllers.processing.ProcessingControllerApi;
 import ua.vehicle.info.api.dto.processing.ProcessingStatus;
 import ua.vehicle.info.api.dto.processing.Status;
 import ua.vehicle.info.events.ProcessingEventListener;

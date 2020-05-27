@@ -1,4 +1,4 @@
-package ua.vehicle.info.api.controllers;
+package ua.vehicle.info.api.controllers.authentification;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -8,13 +8,17 @@ import ua.vehicle.info.api.dto.users.AppRole;
 
 public interface AuthenticationManagementApi {
 
-    @PostMapping("/authenticate")
+    String AUTHENTICATE = "/authenticate";
+    String CHECK = "/check";
+    String GET_ROLE = "/getRole";
+
+    @PostMapping(AUTHENTICATE)
     AuthTokeDto authenticateUser(@RequestBody AuthUserCredentialsDto authUserCredentialsDto);
 
-    @PostMapping("/check")
+    @PostMapping(CHECK)
     boolean checkAuthentication(@RequestBody AuthTokeDto tokeDto);
 
-    @PostMapping("/getRole")
+    @PostMapping(GET_ROLE)
     AppRole getRoleForAuthentication(@RequestBody AuthTokeDto tokeDto);
 
 }
