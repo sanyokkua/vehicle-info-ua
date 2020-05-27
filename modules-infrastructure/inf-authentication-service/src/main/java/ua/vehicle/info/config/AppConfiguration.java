@@ -3,7 +3,7 @@ package ua.vehicle.info.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
-import ua.vehicle.info.util.PasswordUtils;
+import ua.vehicle.info.utils.PasswordUtils;
 
 @Configuration
 public class AppConfiguration {

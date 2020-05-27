@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ua.vehicle.info.dto.ProcessingStatus;
+import ua.vehicle.info.api.dto.processing.ProcessingStatus;
 import ua.vehicle.info.services.ProcessingService;
 
 @RestController

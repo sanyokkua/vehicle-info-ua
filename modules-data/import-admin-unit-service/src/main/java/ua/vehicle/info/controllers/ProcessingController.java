@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ua.vehicle.info.api.dto.processing.ProcessingStatus;
 import ua.vehicle.info.aspects.annotations.LogExceptions;
 import ua.vehicle.info.aspects.annotations.LogInputOutput;
-import ua.vehicle.info.dto.ProcessingStatus;
 import ua.vehicle.info.processing.AdminUnitProcessing;
 
 @RestController

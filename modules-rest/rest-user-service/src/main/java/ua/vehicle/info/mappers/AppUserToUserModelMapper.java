@@ -4,7 +4,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.NullValueMappingStrategy;
 import org.mapstruct.NullValuePropertyMappingStrategy;
-import ua.vehicle.info.dto.AppUser;
+import ua.vehicle.info.api.dto.users.AppUser;
 import ua.vehicle.info.model.UserModel;
 
 @Mapper(componentModel = "spring", nullValueMappingStrategy = NullValueMappingStrategy.RETURN_NULL,

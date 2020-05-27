@@ -5,8 +5,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import lombok.Getter;
 import ua.vehicle.info.api.controllers.ProcessingControllerApi;
-import ua.vehicle.info.dto.ProcessingStatus;
-import ua.vehicle.info.dto.Status;
+import ua.vehicle.info.api.dto.processing.ProcessingStatus;
+import ua.vehicle.info.api.dto.processing.Status;
 import ua.vehicle.info.events.ProcessingEventListener;
 
 public abstract class AbstractProcessingController implements ProcessingControllerApi {

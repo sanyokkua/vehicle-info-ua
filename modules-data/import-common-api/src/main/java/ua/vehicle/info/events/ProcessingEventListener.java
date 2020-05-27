@@ -1,6 +1,6 @@
 package ua.vehicle.info.events;
 
-import ua.vehicle.info.dto.Status;
+import ua.vehicle.info.api.dto.processing.Status;
 
 public interface ProcessingEventListener {
 

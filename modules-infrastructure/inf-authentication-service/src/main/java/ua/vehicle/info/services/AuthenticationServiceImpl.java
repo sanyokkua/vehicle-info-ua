@@ -16,13 +16,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Service;
+import ua.vehicle.info.api.dto.authentication.AuthTokeDto;
+import ua.vehicle.info.api.dto.authentication.AuthUserCredentialsDto;
+import ua.vehicle.info.api.dto.users.AppRole;
+import ua.vehicle.info.api.dto.users.AppUser;
 import ua.vehicle.info.aspects.annotations.SuppressRuntimeExceptions;
-import ua.vehicle.info.dto.AppRole;
-import ua.vehicle.info.dto.AppUser;
-import ua.vehicle.info.dto.AuthTokeDto;
-import ua.vehicle.info.dto.AuthUserCredentialsDto;
 import ua.vehicle.info.external.UserService;
-import ua.vehicle.info.util.PasswordUtils;
+import ua.vehicle.info.utils.PasswordUtils;
 
 @Slf4j
 @Service

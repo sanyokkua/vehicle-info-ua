@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 import org.springframework.stereotype.Component;
 import ua.vehicle.info.model.UserModel;
-import ua.vehicle.info.util.PasswordUtils;
 
 @Slf4j
 @Component

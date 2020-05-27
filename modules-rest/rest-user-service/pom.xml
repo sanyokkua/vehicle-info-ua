@@ -26,11 +26,6 @@
             <version>${vehicle-app-version-general-version}</version>
         </dependency>
         <dependency>
-            <groupId>ua.vehicle.info</groupId>
-            <artifactId>common-user-classes</artifactId>
-            <version>${vehicle-app-version-general-version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>

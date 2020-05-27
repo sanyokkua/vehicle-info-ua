@@ -4,10 +4,10 @@ import java.net.URL;
 import java.util.Objects;
 import lombok.Getter;
 import lombok.Setter;
+import ua.vehicle.info.api.dto.processing.Status;
 import ua.vehicle.info.aspects.annotations.LogExceptions;
 import ua.vehicle.info.aspects.annotations.LogInputOutput;
 import ua.vehicle.info.aspects.annotations.LogTimeMeasures;
-import ua.vehicle.info.dto.Status;
 import ua.vehicle.info.events.ProcessingEventListener;
 
 @Getter
