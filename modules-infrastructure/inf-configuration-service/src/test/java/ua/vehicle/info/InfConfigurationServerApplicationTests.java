@@ -1,10 +1,10 @@
-package ua.vehicle.info.api.gateway;
+package ua.vehicle.info;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApiGatewayApplicationTests {
+class InfConfigurationServerApplicationTests {
 
     @Test
     void contextLoads() {

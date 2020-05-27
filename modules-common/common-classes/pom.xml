@@ -7,12 +7,12 @@
         <artifactId>parent</artifactId>
         <groupId>ua.vehicle.info</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>vehicle-info-common-classes</artifactId>
+    <artifactId>common-classes</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>vehicle-info-common-classes</name>
+    <name>common-classes</name>
     <description>Common Classes for Vehicle Info Project</description>
 
     <properties>
@@ -20,6 +20,15 @@
     </properties>
 
     <dependencies>
+        <!-- Application Dependencies -->
+        <dependency>
+            <groupId>ua.vehicle.info</groupId>
+            <artifactId>common-libs-dependencies</artifactId>
+            <version>${vehicle-app-version-general-version}</version>
+            <type>pom</type>
+        </dependency>
+
+        <!-- Spring Base Dependencies -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -37,18 +46,6 @@
             <artifactId>spring-data-commons</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-crypto</artifactId>
         </dependency>
@@ -56,31 +53,5 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                            <version>${lombok.version}</version>
-                        </path>
-                    </annotationProcessorPaths>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>

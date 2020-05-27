@@ -1,13 +1,13 @@
-package ua.vehicle.info.data.db;
+package ua.vehicle.info;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class UserDbApplication {
+public class LiquibaseRegistrationsApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(UserDbApplication.class, args);
+        SpringApplication.run(LiquibaseRegistrationsApplication.class, args);
     }
 
 }

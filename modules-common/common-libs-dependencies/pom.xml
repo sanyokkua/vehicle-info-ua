@@ -2,6 +2,7 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <artifactId>parent</artifactId>
         <groupId>ua.vehicle.info</groupId>
@@ -9,39 +10,34 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>rest-registration-history</artifactId>
+    <packaging>pom</packaging>
+
+    <artifactId>common-libs-dependencies</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>rest-registration-history</name>
-    <description>User Search service which will provide an ability to save/get user searches</description>
+    <name>common-libs-dependencies</name>
+    <description>Common libs for all modules</description>
 
     <properties>
         <java.version>11</java.version>
+        <mapstruct-processor.version>1.3.1.Final</mapstruct-processor.version>
     </properties>
 
     <dependencies>
-        <!-- Common Dependencies -->
         <dependency>
-            <groupId>ua.vehicle.info</groupId>
-            <artifactId>common-libs-dependencies</artifactId>
-            <version>${vehicle-app-version-general-version}</version>
-            <type>pom</type>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
         <dependency>
-            <groupId>ua.vehicle.info</groupId>
-            <artifactId>common-rest-dependencies</artifactId>
-            <version>${vehicle-app-version-general-version}</version>
-            <type>pom</type>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
         </dependency>
         <dependency>
-            <groupId>ua.vehicle.info</groupId>
-            <artifactId>common-cloud-dependencies</artifactId>
-            <version>${vehicle-app-version-general-version}</version>
-            <type>pom</type>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
         <dependency>
-            <groupId>ua.vehicle.info</groupId>
-            <artifactId>common-classes</artifactId>
-            <version>${vehicle-app-version-general-version}</version>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
         </dependency>
 
         <!-- Spring test dependencies -->
@@ -56,12 +52,19 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
-        <!-- Custom module dependencies -->
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-mongodb</artifactId>
-        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

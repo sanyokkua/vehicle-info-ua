@@ -1,10 +1,10 @@
-package ua.vehicle.info;
+package ua.vehicle.info.discovery.service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ConfigServerApplicationTests {
+class InfDiscoveryServerApplicationTests {
 
     @Test
     void contextLoads() {

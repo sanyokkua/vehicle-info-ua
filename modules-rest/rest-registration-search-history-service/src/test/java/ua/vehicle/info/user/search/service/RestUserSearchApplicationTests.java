@@ -1,10 +1,10 @@
-package ua.vehicle.info.search.service;
+package ua.vehicle.info.user.search.service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SearchServiceApplicationTests {
+class RestUserSearchApplicationTests {
 
     @Test
     void contextLoads() {
