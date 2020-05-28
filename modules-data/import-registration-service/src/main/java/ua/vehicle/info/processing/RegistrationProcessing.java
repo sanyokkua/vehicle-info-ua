@@ -21,7 +21,7 @@ import ua.vehicle.info.processing.processor.tasks.UnzipTask;
 
 @Component
 @RequiredArgsConstructor
-public class RegistrationProcessing {
+public class RegistrationProcessing extends Processor {
 
     private final DownloadFileTask step1DownloadJsonWithUrls;
     private final ParseUrlsFromJsonTask step2ParseUrlsInJson;
@@ -36,7 +36,8 @@ public class RegistrationProcessing {
     @LogTimeMeasures
     @LogInputOutput
     @LogExceptions
-    public void processing(URL url) {
+    @Override
+    public void runSteps(URL url) {
         var jsonPath = step1DownloadJsonWithUrls.process(url);
         var urlsMap = step2ParseUrlsInJson.process(jsonPath);
         urlsMap.forEach(archiveUrl -> {

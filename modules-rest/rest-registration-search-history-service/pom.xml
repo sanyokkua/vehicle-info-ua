@@ -6,7 +6,7 @@
         <artifactId>parent</artifactId>
         <groupId>ua.vehicle.info</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <artifactId>rest-registration-history</artifactId>
@@ -19,52 +19,32 @@
     </properties>
 
     <dependencies>
+        <!-- Common Dependencies -->
         <dependency>
             <groupId>ua.vehicle.info</groupId>
-            <artifactId>vehicle-info-common-classes</artifactId>
+            <artifactId>common-libs-dependencies</artifactId>
+            <version>${vehicle-app-version-general-version}</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>ua.vehicle.info</groupId>
+            <artifactId>common-rest-dependencies</artifactId>
+            <version>${vehicle-app-version-general-version}</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>ua.vehicle.info</groupId>
+            <artifactId>common-cloud-dependencies</artifactId>
+            <version>${vehicle-app-version-general-version}</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>ua.vehicle.info</groupId>
+            <artifactId>common-classes</artifactId>
             <version>${vehicle-app-version-general-version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-rest</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-hateoas</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-mongodb</artifactId>
-        </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
+        <!-- Spring test dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -76,15 +56,12 @@
                 </exclusion>
             </exclusions>
         </dependency>
-    </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+        <!-- Custom module dependencies -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

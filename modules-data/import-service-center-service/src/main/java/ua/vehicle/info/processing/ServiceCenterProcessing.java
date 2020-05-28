@@ -14,7 +14,7 @@ import ua.vehicle.info.processing.processor.tasks.PersistRecordTask;
 
 @Component
 @RequiredArgsConstructor
-public class ServiceCenterProcessing {
+public class ServiceCenterProcessing extends Processor {
 
     private final GetHtmlDocumentTask step1GetHtmlDocument;
     private final GetHtmlElementWithListTask step2GetHtmlElement;
@@ -24,7 +24,8 @@ public class ServiceCenterProcessing {
     @LogTimeMeasures
     @LogInputOutput
     @LogExceptions
-    public void processing(URL url) {
+    @Override
+    public void runSteps(URL url) {
         var document = step1GetHtmlDocument.process(url);
         var elements = step2GetHtmlElement.process(document);
         var parsedServiceCenters = step3parseServiceCenters.process(elements);
