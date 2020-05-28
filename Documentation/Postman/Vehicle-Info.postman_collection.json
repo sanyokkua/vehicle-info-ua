@@ -1,538 +1,762 @@
 {
-  "info": {
-    "_postman_id": "75d04912-0ead-4159-9bf8-73318accbefe",
-    "name": "Vehicle-Info",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "app-management",
-      "item": [
-        {
-          "name": "Get All Service",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "localhost:8006/services",
-              "host": [
-                "localhost"
-              ],
-              "port": "8006",
-              "path": [
-                "services"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Get All Running Services",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "localhost:8006/services/running",
-              "host": [
-                "localhost"
-              ],
-              "port": "8006",
-              "path": [
-                "services",
-                "running"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Run Service import-admin-unit-service",
-          "request": {
-            "method": "POST",
-            "header": [],
-            "url": {
-              "raw": "localhost:8006/process/import-admin-unit-service",
-              "host": [
-                "localhost"
-              ],
-              "port": "8006",
-              "path": [
-                "process",
-                "import-admin-unit-service"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Run Service import-admin-unit-service Copy",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "localhost:8006/process/import-admin-unit-service/status",
-              "host": [
-                "localhost"
-              ],
-              "port": "8006",
-              "path": [
-                "process",
-                "import-admin-unit-service",
-                "status"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Run Service import-registration-service",
-          "request": {
-            "method": "POST",
-            "header": [],
-            "url": {
-              "raw": "localhost:8006/process/import-registration-service",
-              "host": [
-                "localhost"
-              ],
-              "port": "8006",
-              "path": [
-                "process",
-                "import-registration-service"
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "Run Service import-service-center-service",
-          "request": {
-            "method": "POST",
-            "header": [],
-            "url": {
-              "raw": "localhost:8006/process/import-service-center-service",
-              "host": [
-                "localhost"
-              ],
-              "port": "8006",
-              "path": [
-                "process",
-                "import-service-center-service"
-              ]
-            }
-          },
-          "response": []
-        }
-      ],
-      "protocolProfileBehavior": {}
-    },
-    {
-      "name": "internal-proxied",
-      "item": [
-        {
-          "name": "app-management",
-          "item": [
-            {
-              "name": "Get All Service",
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "localhost:9999/rest-app-management-service/services",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "9999",
-                  "path": [
-                    "rest-app-management-service",
-                    "services"
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "Get All Running Services",
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "localhost:9999/rest-app-management-service/services/running",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "9999",
-                  "path": [
-                    "rest-app-management-service",
-                    "services",
-                    "running"
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "Run Service import-admin-unit-service Import",
-              "request": {
-                "method": "POST",
-                "header": [],
-                "url": {
-                  "raw": "localhost:9999/rest-app-management-service/process/import-admin-unit-service",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "9999",
-                  "path": [
-                    "rest-app-management-service",
-                    "process",
-                    "import-admin-unit-service"
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "Run Service import-admin-unit-service Status",
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "localhost:9999/rest-app-management-service/process/import-admin-unit-service/status",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "9999",
-                  "path": [
-                    "rest-app-management-service",
-                    "process",
-                    "import-admin-unit-service",
-                    "status"
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "Run Service import-registration-service Import",
-              "request": {
-                "method": "POST",
-                "header": [],
-                "url": {
-                  "raw": "localhost:9999/rest-app-management-service/process/import-registration-service",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "9999",
-                  "path": [
-                    "rest-app-management-service",
-                    "process",
-                    "import-registration-service"
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "Run Service import-registration-service Status",
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "localhost:9999/rest-app-management-service/process/import-registration-service/status",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "9999",
-                  "path": [
-                    "rest-app-management-service",
-                    "process",
-                    "import-registration-service",
-                    "status"
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "Run Service import-service-center-service Import",
-              "request": {
-                "method": "POST",
-                "header": [],
-                "url": {
-                  "raw": "localhost:9999/rest-app-management-service/process/import-service-center-service",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "9999",
-                  "path": [
-                    "rest-app-management-service",
-                    "process",
-                    "import-service-center-service"
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "Run Service import-service-center-service Status",
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "localhost:9999/rest-app-management-service/process/import-service-center-service/status",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "9999",
-                  "path": [
-                    "rest-app-management-service",
-                    "process",
-                    "import-service-center-service",
-                    "status"
-                  ]
-                }
-              },
-              "response": []
-            }
-          ],
-          "protocolProfileBehavior": {},
-          "_postman_isSubFolder": true
-        },
-        {
-          "name": "rest-user-service",
-          "item": [
-            {
-              "name": "GetUserById",
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "localhost:9999/rest-user-service/user/1",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "9999",
-                  "path": [
-                    "rest-user-service",
-                    "user",
-                    "1"
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "GetUserByEmail",
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "localhost:9999/rest-user-service/user?email=admin@mail.com",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "9999",
-                  "path": [
-                    "rest-user-service",
-                    "user"
-                  ],
-                  "query": [
-                    {
-                      "key": "email",
-                      "value": "admin@mail.com"
-                    }
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "CreateUser",
-              "request": {
-                "method": "POST",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n\t\"username\": \"admin2\",\n\t\"password\": \"password\",\n\t\"email\": \"admin2@mail.com\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "localhost:9999/rest-user-service/user",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "9999",
-                  "path": [
-                    "rest-user-service",
-                    "user"
-                  ],
-                  "query": [
-                    {
-                      "key": "email",
-                      "value": "admin@mail.com",
-                      "disabled": true
-                    }
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "UpdateUser",
-              "request": {
-                "method": "PUT",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"userId\": 1,\n    \"username\": \"admin_p\",\n    \"email\": \"admin@mail.com\",\n    \"password\": \"92f64c296bd3f1313eeccd37d70405b46dc61e36ee343028b7bb578c7a6b7e83c971563a52446590\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "localhost:9999/rest-user-service/user/1",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "9999",
-                  "path": [
-                    "rest-user-service",
-                    "user",
-                    "1"
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "DeleteUser",
-              "request": {
-                "method": "DELETE",
-                "header": [],
-                "url": {
-                  "raw": "localhost:9999/rest-user-service/user/2",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "9999",
-                  "path": [
-                    "rest-user-service",
-                    "user",
-                    "2"
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "GetAllUsers",
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "localhost:9999/rest-user-service/users?page=0&size=100",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "9999",
-                  "path": [
-                    "rest-user-service",
-                    "users"
-                  ],
-                  "query": [
-                    {
-                      "key": "page",
-                      "value": "0"
-                    },
-                    {
-                      "key": "size",
-                      "value": "100"
-                    },
-                    {
-                      "key": "sort",
-                      "value": "ASC",
-                      "disabled": true
-                    }
-                  ]
-                }
-              },
-              "response": []
-            }
-          ],
-          "protocolProfileBehavior": {},
-          "_postman_isSubFolder": true
-        },
-        {
-          "name": "inf-authentication-service",
-          "item": [
-            {
-              "name": "authenticate",
-              "request": {
-                "method": "POST",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n\t\"username\": \"admin@mail.com\",\n\t\"password\": \"password\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "localhost:9999/inf-authentication-service/authenticate",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "9999",
-                  "path": [
-                    "inf-authentication-service",
-                    "authenticate"
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
-              "name": "check",
-              "request": {
-                "method": "POST",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n\t\"token\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLmNvbSIsImV4cCI6MTU5MDM1ODgyNSwiaWF0IjoxNTkwMzU4NzY1fQ.OAuclcdrjA4bLRvyQpweO-BRBcK4oMDwM-f_h-nCi-9tBm-qVdKLk46LUe6gQvnueoKoZaKLZuLqf2Rorp1goA\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "localhost:9999/inf-authentication-service/check",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "9999",
-                  "path": [
-                    "inf-authentication-service",
-                    "check"
-                  ]
-                }
-              },
-              "response": []
-            }
-          ],
-          "protocolProfileBehavior": {},
-          "_postman_isSubFolder": true
-        }
-      ],
-      "protocolProfileBehavior": {}
-    }
-  ],
-  "protocolProfileBehavior": {}
+	"info": {
+		"_postman_id": "75d04912-0ead-4159-9bf8-73318accbefe",
+		"name": "Vehicle-Info",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "app-management",
+			"item": [
+				{
+					"name": "Get All Service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8006/services",
+							"host": [
+								"localhost"
+							],
+							"port": "8006",
+							"path": [
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Running Services",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8006/services/running",
+							"host": [
+								"localhost"
+							],
+							"port": "8006",
+							"path": [
+								"services",
+								"running"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Run Service import-admin-unit-service",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8006/process/import-admin-unit-service",
+							"host": [
+								"localhost"
+							],
+							"port": "8006",
+							"path": [
+								"process",
+								"import-admin-unit-service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Run Service import-admin-unit-service Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8006/process/import-admin-unit-service/status",
+							"host": [
+								"localhost"
+							],
+							"port": "8006",
+							"path": [
+								"process",
+								"import-admin-unit-service",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Run Service import-registration-service",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8006/process/import-registration-service",
+							"host": [
+								"localhost"
+							],
+							"port": "8006",
+							"path": [
+								"process",
+								"import-registration-service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Run Service import-service-center-service",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8006/process/import-service-center-service",
+							"host": [
+								"localhost"
+							],
+							"port": "8006",
+							"path": [
+								"process",
+								"import-service-center-service"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "internal-proxied",
+			"item": [
+				{
+					"name": "inf-authentication-service",
+					"item": [
+						{
+							"name": "authenticate",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\": \"admin@mail.com\",\n\t\"password\": \"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9999/inf-authentication-service/authenticate",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"inf-authentication-service",
+										"authenticate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "check",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"token\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBtYWlsLmNvbSIsImV4cCI6MTU5MDM1ODgyNSwiaWF0IjoxNTkwMzU4NzY1fQ.OAuclcdrjA4bLRvyQpweO-BRBcK4oMDwM-f_h-nCi-9tBm-qVdKLk46LUe6gQvnueoKoZaKLZuLqf2Rorp1goA\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9999/inf-authentication-service/check",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"inf-authentication-service",
+										"check"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "app-management",
+					"item": [
+						{
+							"name": "Get Documentation",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9999/rest-app-management-service/v2/api-docs",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"rest-app-management-service",
+										"v2",
+										"api-docs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Service",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9999/rest-app-management-service/services",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"rest-app-management-service",
+										"services"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Running Services",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9999/rest-app-management-service/services/running",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"rest-app-management-service",
+										"services",
+										"running"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Run Service import-admin-unit-service Import",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:9999/rest-app-management-service/process/import-admin-unit-service",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"rest-app-management-service",
+										"process",
+										"import-admin-unit-service"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Run Service import-admin-unit-service Status",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9999/rest-app-management-service/process/import-admin-unit-service/status",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"rest-app-management-service",
+										"process",
+										"import-admin-unit-service",
+										"status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Run Service import-registration-service Import",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:9999/rest-app-management-service/process/import-registration-service",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"rest-app-management-service",
+										"process",
+										"import-registration-service"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Run Service import-registration-service Status",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9999/rest-app-management-service/process/import-registration-service/status",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"rest-app-management-service",
+										"process",
+										"import-registration-service",
+										"status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Run Service import-service-center-service Import",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:9999/rest-app-management-service/process/import-service-center-service",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"rest-app-management-service",
+										"process",
+										"import-service-center-service"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Run Service import-service-center-service Status",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9999/rest-app-management-service/process/import-service-center-service/status",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"rest-app-management-service",
+										"process",
+										"import-service-center-service",
+										"status"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "import-admin-unit",
+					"item": [
+						{
+							"name": "Get Documentation",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9999/import-admin-unit-service/v2/api-docs",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"import-admin-unit-service",
+										"v2",
+										"api-docs"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "import-persistence",
+					"item": [
+						{
+							"name": "Get Documentation",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9999/import-persistence-service/v2/api-docs",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"import-persistence-service",
+										"v2",
+										"api-docs"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "import-registration",
+					"item": [
+						{
+							"name": "Get Documentation",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9999/import-registration-service/v2/api-docs",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"import-registration-service",
+										"v2",
+										"api-docs"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "import-service-center",
+					"item": [
+						{
+							"name": "Get Documentation",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9999/import-service-center-service/v2/api-docs",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"import-service-center-service",
+										"v2",
+										"api-docs"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "rest-user-service",
+					"item": [
+						{
+							"name": "Get Documentation",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9999/rest-user-service/v2/api-docs",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"rest-user-service",
+										"v2",
+										"api-docs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetUserById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9999/rest-user-service/user/1",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"rest-user-service",
+										"user",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetUserByEmail",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9999/rest-user-service/user?email=admin@mail.com",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"rest-user-service",
+										"user"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "admin@mail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\": \"admin2\",\n\t\"password\": \"password\",\n\t\"email\": \"admin2@mail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9999/rest-user-service/user",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"rest-user-service",
+										"user"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "admin@mail.com",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateUser",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": 1,\n    \"username\": \"admin_p\",\n    \"email\": \"admin@mail.com\",\n    \"password\": \"92f64c296bd3f1313eeccd37d70405b46dc61e36ee343028b7bb578c7a6b7e83c971563a52446590\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9999/rest-user-service/user/1",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"rest-user-service",
+										"user",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteUser",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:9999/rest-user-service/user/2",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"rest-user-service",
+										"user",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAllUsers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9999/rest-user-service/users?page=0&size=100",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"rest-user-service",
+										"users"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "100"
+										},
+										{
+											"key": "sort",
+											"value": "ASC",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "rest-registration-search",
+					"item": [
+						{
+							"name": "Get Documentation",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9999/rest-search-service/v2/api-docs",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"rest-search-service",
+										"v2",
+										"api-docs"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "rest-registration-management",
+					"item": [
+						{
+							"name": "Get Documentation",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:9999/rest-user-search-service/v2/api-docs",
+									"host": [
+										"localhost"
+									],
+									"port": "9999",
+									"path": [
+										"rest-user-search-service",
+										"v2",
+										"api-docs"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "1aeff5cc-77ad-429c-97e9-a7a1a790abcc",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "2330a12f-753f-4cdd-9307-1952ee4120f3",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
 }
