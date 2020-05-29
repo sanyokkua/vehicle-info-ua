@@ -8,6 +8,9 @@ import ua.vehicle.info.queues.enums.QueueExchange;
 import ua.vehicle.info.queues.enums.QueueTopic;
 import ua.vehicle.info.queues.sender.QueueSenderService;
 
+/**
+ * The type Service center persister.
+ */
 @RequiredArgsConstructor
 public class ServiceCenterPersister implements Persister<ServiceCenterRecord> {
 

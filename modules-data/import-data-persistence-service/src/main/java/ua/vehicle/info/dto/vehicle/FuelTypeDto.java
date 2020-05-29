@@ -6,6 +6,9 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
+/**
+ * The type Fuel type dto.
+ */
 @Data
 @NoArgsConstructor
 @Table("ua_vehicle_info.fuel_type")

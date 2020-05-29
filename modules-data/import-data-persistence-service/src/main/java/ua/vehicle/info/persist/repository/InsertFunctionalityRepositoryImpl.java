@@ -6,6 +6,11 @@ import org.springframework.data.jdbc.core.JdbcAggregateTemplate;
 import org.springframework.stereotype.Component;
 import ua.vehicle.info.aspects.annotations.LogExceptions;
 
+/**
+ * The type Insert functionality repository.
+ *
+ * @param <T> the type parameter
+ */
 @Slf4j
 @Component
 @RequiredArgsConstructor

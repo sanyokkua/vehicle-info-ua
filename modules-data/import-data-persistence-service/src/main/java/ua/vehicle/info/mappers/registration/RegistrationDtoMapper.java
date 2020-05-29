@@ -6,6 +6,9 @@ import ua.vehicle.info.dto.RegistrationRecord;
 import ua.vehicle.info.dto.registration.RegistrationDto;
 import ua.vehicle.info.mappers.DefaultMapperForRegistrationType;
 
+/**
+ * The interface Registration dto mapper.
+ */
 @Mapper(componentModel = "spring")
 public interface RegistrationDtoMapper extends DefaultMapperForRegistrationType<RegistrationDto> {
 

@@ -9,11 +9,24 @@ import ua.vehicle.info.api.dto.processing.ProcessingStatus;
 import ua.vehicle.info.api.dto.processing.Status;
 import ua.vehicle.info.events.ProcessingEventListener;
 
+/**
+ * The type Abstract processing controller.
+ */
 public abstract class AbstractProcessingController implements ProcessingControllerApi {
 
+    /**
+     * The Event listener.
+     */
     protected final EventListener eventListener = new EventListener();
     private final ExecutorService executorService = Executors.newSingleThreadExecutor();
 
+    /**
+     * Start processing status.
+     *
+     * @param runnable the runnable
+     *
+     * @return the processing status
+     */
     protected ProcessingStatus start(Runnable runnable) {
         if (eventListener.getCurrentStatus() != Status.RUNNING) {
             executorService.submit(runnable);
@@ -21,6 +34,11 @@ public abstract class AbstractProcessingController implements ProcessingControll
         return buildStatus();
     }
 
+    /**
+     * Build status processing status.
+     *
+     * @return the processing status
+     */
     protected ProcessingStatus buildStatus() {
         return ProcessingStatus.builder()
                 .currentTime(LocalDateTime.now())

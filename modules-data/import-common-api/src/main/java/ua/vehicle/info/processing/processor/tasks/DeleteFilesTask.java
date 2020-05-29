@@ -11,6 +11,9 @@ import ua.vehicle.info.aspects.annotations.LogInputOutput;
 import ua.vehicle.info.aspects.annotations.LogTimeMeasures;
 import ua.vehicle.info.processing.processor.Task;
 
+/**
+ * The type Delete files task.
+ */
 @Slf4j
 public class DeleteFilesTask implements Task<List<Path>, Void> {
 

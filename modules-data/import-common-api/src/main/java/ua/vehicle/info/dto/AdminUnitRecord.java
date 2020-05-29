@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * The type Admin unit record.
+ */
 @Data
 @Builder
 @AllArgsConstructor

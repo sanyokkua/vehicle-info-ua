@@ -18,10 +18,16 @@ import ua.vehicle.info.aspects.annotations.LogTimeMeasures;
 import ua.vehicle.info.processing.processor.Task;
 import ua.vehicle.info.services.FileUtilsService;
 
+/**
+ * The type Read csv file task.
+ */
 @Slf4j
 @RequiredArgsConstructor
 public class ReadCsvFileTask implements Task<Path, Iterator<CSVRecord>> {
 
+    /**
+     * The File utils service.
+     */
     protected final FileUtilsService fileUtilsService;
 
     @LogTimeMeasures

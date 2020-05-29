@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 import ua.vehicle.info.dto.vehicle.BodyTypeDto;
 import ua.vehicle.info.persist.repository.InsertFunctionalityRepository;
 
+/**
+ * The interface Body type jdbc repository.
+ */
 @Repository
 public interface BodyTypeJdbcRepository extends CrudRepository<BodyTypeDto, String>,
         InsertFunctionalityRepository<BodyTypeDto> {

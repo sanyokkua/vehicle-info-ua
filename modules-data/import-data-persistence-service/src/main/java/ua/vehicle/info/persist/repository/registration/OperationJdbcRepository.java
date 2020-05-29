@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 import ua.vehicle.info.dto.registration.OperationDto;
 import ua.vehicle.info.persist.repository.InsertFunctionalityRepository;
 
+/**
+ * The interface Operation jdbc repository.
+ */
 @Repository
 public interface OperationJdbcRepository extends CrudRepository<OperationDto, Long>,
         InsertFunctionalityRepository<OperationDto> {

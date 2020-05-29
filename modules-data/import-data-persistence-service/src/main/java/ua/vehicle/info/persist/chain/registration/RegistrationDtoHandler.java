@@ -12,6 +12,9 @@ import ua.vehicle.info.persist.repository.registration.RegistrationJdbcRepositor
 import ua.vehicle.info.persist.repository.vehicle.VehicleJdbcRepository;
 import ua.vehicle.info.queues.sender.QueueSenderService;
 
+/**
+ * The type Registration dto handler.
+ */
 @Slf4j
 @Component
 public class RegistrationDtoHandler extends RegistrationRecordHandler {
@@ -21,6 +24,15 @@ public class RegistrationDtoHandler extends RegistrationRecordHandler {
     private final RegistrationJdbcRepository repository;
     private final VehicleJdbcRepository vehicleJdbcRepository;
 
+    /**
+     * Instantiates a new Registration dto handler.
+     *
+     * @param queueSenderService the queue sender service
+     * @param mapper the mapper
+     * @param vehicleDtoMapper the vehicle dto mapper
+     * @param repository the repository
+     * @param vehicleJdbcRepository the vehicle jdbc repository
+     */
     public RegistrationDtoHandler(QueueSenderService queueSenderService,
             RegistrationDtoMapper mapper, VehicleDtoMapper vehicleDtoMapper,
             RegistrationJdbcRepository repository,

@@ -10,10 +10,16 @@ import ua.vehicle.info.dto.registration.AdminUnitDto;
 import ua.vehicle.info.persist.chain.Handler;
 import ua.vehicle.info.persist.repository.registration.AdminUnitJdbcRepository;
 
+/**
+ * The type Admin unit handler.
+ */
 @Slf4j
 @RequiredArgsConstructor
 public abstract class AdminUnitHandler implements Handler<AdminUnitDto> {
 
+    /**
+     * The Repository.
+     */
     protected final AdminUnitJdbcRepository repository;
     private Handler<AdminUnitDto> next;
 
@@ -48,7 +54,21 @@ public abstract class AdminUnitHandler implements Handler<AdminUnitDto> {
         }
     }
 
+    /**
+     * Gets unit number.
+     *
+     * @param obj the obj
+     *
+     * @return the unit number
+     */
     protected abstract String getUnitNumber(AdminUnitDto obj);
 
+    /**
+     * Can handle boolean.
+     *
+     * @param obj the obj
+     *
+     * @return the boolean
+     */
     protected abstract boolean canHandle(AdminUnitDto obj);
 }

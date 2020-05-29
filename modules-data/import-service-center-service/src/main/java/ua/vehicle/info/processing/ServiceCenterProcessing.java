@@ -12,6 +12,9 @@ import ua.vehicle.info.processing.jobs.GetHtmlElementWithListTask;
 import ua.vehicle.info.processing.jobs.ParseServiceCentersTask;
 import ua.vehicle.info.processing.processor.tasks.PersistRecordTask;
 
+/**
+ * The type Service center processing.
+ */
 @Component
 @RequiredArgsConstructor
 public class ServiceCenterProcessing extends Processor {

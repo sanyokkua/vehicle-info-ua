@@ -6,9 +6,19 @@ import java.util.stream.Collectors;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 
+/**
+ * The type Common aspect.
+ */
 @Slf4j
 public abstract class CommonAspect {
 
+    /**
+     * Gets arguments.
+     *
+     * @param joinPoint the join point
+     *
+     * @return the arguments
+     */
     protected String getArguments(JoinPoint joinPoint) {
         return Arrays.stream(joinPoint.getArgs())
                 .map(Optional::ofNullable)
@@ -17,6 +27,13 @@ public abstract class CommonAspect {
                 .collect(Collectors.joining(","));
     }
 
+    /**
+     * Gets joint point info.
+     *
+     * @param joinPoint the join point
+     *
+     * @return the joint point info
+     */
     protected String getJointPointInfo(JoinPoint joinPoint) {
         var className = joinPoint.getTarget().getClass().getName();
         var method = joinPoint.getSignature().getName();

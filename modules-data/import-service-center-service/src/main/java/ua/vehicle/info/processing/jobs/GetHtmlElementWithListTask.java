@@ -8,6 +8,9 @@ import ua.vehicle.info.aspects.annotations.LogInputOutput;
 import ua.vehicle.info.aspects.annotations.LogTimeMeasures;
 import ua.vehicle.info.processing.processor.Task;
 
+/**
+ * The type Get html element with list task.
+ */
 public class GetHtmlElementWithListTask implements Task<Document, Elements> {
 
     private static final String SELECTOR =

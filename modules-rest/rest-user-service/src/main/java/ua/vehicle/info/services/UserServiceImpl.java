@@ -11,6 +11,9 @@ import ua.vehicle.info.aspects.EncryptPassword;
 import ua.vehicle.info.model.UserModel;
 import ua.vehicle.info.repositories.UserRepository;
 
+/**
+ * The type User service.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor

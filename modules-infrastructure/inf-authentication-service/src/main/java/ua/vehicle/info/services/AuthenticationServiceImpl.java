@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Service;
-import ua.vehicle.info.api.dto.authentication.AuthTokeDto;
+import ua.vehicle.info.api.dto.authentication.AuthTokenDto;
 import ua.vehicle.info.api.dto.authentication.AuthUserCredentialsDto;
 import ua.vehicle.info.api.dto.users.AppRole;
 import ua.vehicle.info.api.dto.users.AppUser;
@@ -24,6 +24,9 @@ import ua.vehicle.info.aspects.annotations.SuppressRuntimeExceptions;
 import ua.vehicle.info.external.UserService;
 import ua.vehicle.info.utils.PasswordUtils;
 
+/**
+ * The type Authentication service.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -37,21 +40,21 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Nullable
     @Override
-    public AuthTokeDto authenticate(AuthUserCredentialsDto authUserCredentialsDto) {
+    public AuthTokenDto authenticate(AuthUserCredentialsDto authUserCredentialsDto) {
         var userByEmail = userService.getUserByEmail(authUserCredentialsDto.getUsername());
         if (Objects.isNull(userByEmail)) {
-            return AuthTokeDto.builder().build();
+            return AuthTokenDto.builder().build();
         }
         var isMatching = passwordUtils.isMatching(authUserCredentialsDto.getPassword(),
                 userByEmail.getPassword());
         if (!isMatching) {
-            return AuthTokeDto.builder().build();
+            return AuthTokenDto.builder().build();
         }
         return generateToken(userByEmail);
     }
 
     @Override
-    public boolean checkIsValid(AuthTokeDto tokeDto) {
+    public boolean checkIsValid(AuthTokenDto tokeDto) {
         var username = getUsername(tokeDto.getToken());
         var userByEmail = userService.getUserByEmail(username);
         if (Objects.isNull(userByEmail)) {
@@ -61,7 +64,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     }
 
     @Override
-    public AppRole getRoleForAuthentication(AuthTokeDto tokeDto) {
+    public AppRole getRoleForAuthentication(AuthTokenDto tokeDto) {
         return null;
     }
 
@@ -87,7 +90,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         return claimResolverFunc.apply(claims);
     }
 
-    private AuthTokeDto generateToken(AppUser userDetails) {
+    private AuthTokenDto generateToken(AppUser userDetails) {
         Map<String, Object> claims = new HashMap<>();
         var fromTime = LocalDateTime.now();
         var toTime = LocalDateTime.now().plusMinutes(JWT_TOKEN_MINUTES);
@@ -100,7 +103,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .setExpiration(to)
                 .signWith(SignatureAlgorithm.HS512, jwtSecret)
                 .compact();
-        return AuthTokeDto.builder().token(token).build();
+        return AuthTokenDto.builder().token(token).build();
     }
 
     private boolean isValid(String token, AppUser user) {

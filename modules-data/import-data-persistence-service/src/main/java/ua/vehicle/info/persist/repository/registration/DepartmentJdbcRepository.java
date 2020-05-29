@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 import ua.vehicle.info.dto.registration.DepartmentDto;
 import ua.vehicle.info.persist.repository.InsertFunctionalityRepository;
 
+/**
+ * The interface Department jdbc repository.
+ */
 @Repository
 public interface DepartmentJdbcRepository extends CrudRepository<DepartmentDto, Long>,
         InsertFunctionalityRepository<DepartmentDto> {

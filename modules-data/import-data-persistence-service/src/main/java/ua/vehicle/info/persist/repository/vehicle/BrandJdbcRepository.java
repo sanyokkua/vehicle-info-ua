@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 import ua.vehicle.info.dto.vehicle.BrandDto;
 import ua.vehicle.info.persist.repository.InsertFunctionalityRepository;
 
+/**
+ * The interface Brand jdbc repository.
+ */
 @Repository
 public interface BrandJdbcRepository extends CrudRepository<BrandDto, String>,
         InsertFunctionalityRepository<BrandDto> {

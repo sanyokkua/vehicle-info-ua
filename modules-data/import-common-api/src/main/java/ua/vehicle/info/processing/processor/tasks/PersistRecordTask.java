@@ -11,6 +11,12 @@ import ua.vehicle.info.processing.mappers.InputMapper;
 import ua.vehicle.info.processing.persistance.Persister;
 import ua.vehicle.info.processing.processor.Task;
 
+/**
+ * The type Persist record task.
+ *
+ * @param <I> the type parameter
+ * @param <T> the type parameter
+ */
 @RequiredArgsConstructor
 public class PersistRecordTask<I, T> implements Task<Iterator<I>, Void> {
 

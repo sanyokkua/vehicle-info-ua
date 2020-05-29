@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 import ua.vehicle.info.dto.registration.PurposeDto;
 import ua.vehicle.info.persist.repository.InsertFunctionalityRepository;
 
+/**
+ * The interface Purpose jdbc repository.
+ */
 @Repository
 public interface PurposeJdbcRepository extends CrudRepository<PurposeDto, String>,
         InsertFunctionalityRepository<PurposeDto> {

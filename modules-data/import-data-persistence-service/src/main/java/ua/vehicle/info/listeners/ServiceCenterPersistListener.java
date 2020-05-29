@@ -7,6 +7,9 @@ import ua.vehicle.info.dto.ServiceCenterRecord;
 import ua.vehicle.info.mappers.registration.ServiceCenterDtoMapper;
 import ua.vehicle.info.persist.ServiceCenterService;
 
+/**
+ * The type Service center persist listener.
+ */
 @Slf4j
 @RequiredArgsConstructor
 public class ServiceCenterPersistListener implements OnMessageListener<ServiceCenterRecord> {

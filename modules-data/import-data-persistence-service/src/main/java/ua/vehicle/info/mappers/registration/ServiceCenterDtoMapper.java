@@ -6,6 +6,9 @@ import ua.vehicle.info.dto.ServiceCenterRecord;
 import ua.vehicle.info.dto.registration.ServiceCenterDto;
 import ua.vehicle.info.mappers.DefaultMappersForTypes;
 
+/**
+ * The interface Service center dto mapper.
+ */
 @Mapper(componentModel = "spring")
 public interface ServiceCenterDtoMapper extends DefaultMappersForTypes<ServiceCenterRecord, ServiceCenterDto> {
 

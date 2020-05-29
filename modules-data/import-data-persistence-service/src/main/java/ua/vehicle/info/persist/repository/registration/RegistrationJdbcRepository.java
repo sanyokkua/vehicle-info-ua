@@ -9,6 +9,9 @@ import org.springframework.stereotype.Repository;
 import ua.vehicle.info.dto.registration.RegistrationDto;
 import ua.vehicle.info.persist.repository.InsertFunctionalityRepository;
 
+/**
+ * The interface Registration jdbc repository.
+ */
 @Repository
 public interface RegistrationJdbcRepository extends CrudRepository<RegistrationDto, Long>,
         InsertFunctionalityRepository<RegistrationDto> {
@@ -17,6 +20,20 @@ public interface RegistrationJdbcRepository extends CrudRepository<RegistrationD
     @Override
     boolean existsById(Long aLong);
 
+    /**
+     * Find by fields registration dto.
+     *
+     * @param purpose the purpose
+     * @param depCode the dep code
+     * @param adminUnit the admin unit
+     * @param opCode the op code
+     * @param vehicleId the vehicle id
+     * @param regDate the reg date
+     * @param personType the person type
+     * @param regNumber the reg number
+     *
+     * @return the registration dto
+     */
     @Query("select * from ua_vehicle_info.registration r where "
             + "r.purpose like :purpose and "
             + "r.dep_code = :dep_code and "
@@ -37,6 +54,13 @@ public interface RegistrationJdbcRepository extends CrudRepository<RegistrationD
             @Param("reg_number") String regNumber
     );
 
+    /**
+     * Find registration registration dto.
+     *
+     * @param dto the dto
+     *
+     * @return the registration dto
+     */
     @Cacheable(cacheNames = "findRegistration", unless = "#result == null", key = "#dto.hashCode()")
     default RegistrationDto findRegistration(RegistrationDto dto) {
         return findByFields(dto.getPurpose(),

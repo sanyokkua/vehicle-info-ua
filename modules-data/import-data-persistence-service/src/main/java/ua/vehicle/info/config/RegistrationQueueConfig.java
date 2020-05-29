@@ -15,19 +15,40 @@ import ua.vehicle.info.queues.enums.QueueTopic;
 import ua.vehicle.info.queues.enums.Queues;
 import ua.vehicle.info.receivers.implementations.RegistrationReceiver;
 
+/**
+ * The type Registration queue config.
+ */
 @Configuration
 public class RegistrationQueueConfig {
 
+    /**
+     * Queue queue.
+     *
+     * @return the queue
+     */
     @Bean("registrationQueue")
     public Queue queue() {
         return new Queue(Queues.QUEUE_REGISTRATION.getQueue(), false);
     }
 
+    /**
+     * Exchange topic exchange.
+     *
+     * @return the topic exchange
+     */
     @Bean("registrationExchange")
     public TopicExchange exchange() {
         return new TopicExchange(QueueExchange.VEHICLE_REGISTRATION.getExchange());
     }
 
+    /**
+     * Binding binding.
+     *
+     * @param queue the queue
+     * @param exchange the exchange
+     *
+     * @return the binding
+     */
     @Bean("registrationBinding")
     public Binding binding(@Qualifier("registrationQueue") Queue queue,
             @Qualifier("registrationExchange") TopicExchange exchange) {
@@ -37,6 +58,14 @@ public class RegistrationQueueConfig {
                 .with(QueueTopic.TOPIC_REGISTRATION.getRoute());
     }
 
+    /**
+     * Container simple message listener container.
+     *
+     * @param connectionFactory the connection factory
+     * @param listenerAdapter the listener adapter
+     *
+     * @return the simple message listener container
+     */
     @Bean("registrationContainer")
     public SimpleMessageListenerContainer container(ConnectionFactory connectionFactory,
             @Qualifier("registrationListenerAdapter") MessageListenerAdapter listenerAdapter) {
@@ -47,6 +76,13 @@ public class RegistrationQueueConfig {
         return container;
     }
 
+    /**
+     * Listener adapter message listener adapter.
+     *
+     * @param receiver the receiver
+     *
+     * @return the message listener adapter
+     */
     @Bean("registrationListenerAdapter")
     public MessageListenerAdapter listenerAdapter(RegistrationReceiver receiver) {
         return new MessageListenerAdapter(receiver, "process");

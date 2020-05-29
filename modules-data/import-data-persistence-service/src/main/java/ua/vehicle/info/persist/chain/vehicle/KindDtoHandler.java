@@ -9,12 +9,22 @@ import ua.vehicle.info.persist.chain.RegistrationRecordHandler;
 import ua.vehicle.info.persist.repository.vehicle.KindJdbcRepository;
 import ua.vehicle.info.queues.sender.QueueSenderService;
 
+/**
+ * The type Kind dto handler.
+ */
 @Component
 public class KindDtoHandler extends RegistrationRecordHandler {
 
     private final KindDtoMapper mapper;
     private final KindJdbcRepository repository;
 
+    /**
+     * Instantiates a new Kind dto handler.
+     *
+     * @param queueSenderService the queue sender service
+     * @param mapper the mapper
+     * @param repository the repository
+     */
     public KindDtoHandler(QueueSenderService queueSenderService, KindDtoMapper mapper,
             KindJdbcRepository repository) {
         super(queueSenderService);

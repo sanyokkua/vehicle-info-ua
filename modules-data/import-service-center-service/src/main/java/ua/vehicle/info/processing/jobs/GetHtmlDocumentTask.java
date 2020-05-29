@@ -14,6 +14,9 @@ import ua.vehicle.info.aspects.annotations.LogInputOutput;
 import ua.vehicle.info.aspects.annotations.LogTimeMeasures;
 import ua.vehicle.info.processing.processor.Task;
 
+/**
+ * The type Get html document task.
+ */
 @Slf4j
 @RequiredArgsConstructor
 public class GetHtmlDocumentTask implements Task<URL, Document> {

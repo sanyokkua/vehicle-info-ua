@@ -9,12 +9,22 @@ import ua.vehicle.info.persist.chain.RegistrationRecordHandler;
 import ua.vehicle.info.persist.repository.vehicle.BrandJdbcRepository;
 import ua.vehicle.info.queues.sender.QueueSenderService;
 
+/**
+ * The type Brand dto handler.
+ */
 @Component
 public class BrandDtoHandler extends RegistrationRecordHandler {
 
     private final BrandDtoMapper mapper;
     private final BrandJdbcRepository repository;
 
+    /**
+     * Instantiates a new Brand dto handler.
+     *
+     * @param queueSenderService the queue sender service
+     * @param mapper the mapper
+     * @param repository the repository
+     */
     public BrandDtoHandler(QueueSenderService queueSenderService, BrandDtoMapper mapper,
             BrandJdbcRepository repository) {
         super(queueSenderService);

@@ -18,6 +18,9 @@ import ua.vehicle.info.aspects.annotations.LogTimeMeasures;
 import ua.vehicle.info.dto.AdminUnitRecord;
 import ua.vehicle.info.processing.processor.Task;
 
+/**
+ * The type Parse records task.
+ */
 @Slf4j
 @RequiredArgsConstructor
 public class ParseRecordsTask implements Task<Path, Iterator<AdminUnitRecord>> {

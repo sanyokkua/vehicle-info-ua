@@ -9,6 +9,9 @@ import ua.vehicle.info.dto.registration.AdminUnitDto;
 import ua.vehicle.info.mappers.registration.AdminUnitDtoMapper;
 import ua.vehicle.info.persist.chain.Handler;
 
+/**
+ * The type Admin unit persist listener.
+ */
 @Slf4j
 @RequiredArgsConstructor
 public class AdminUnitPersistListener implements OnMessageListener<AdminUnitRecord> {

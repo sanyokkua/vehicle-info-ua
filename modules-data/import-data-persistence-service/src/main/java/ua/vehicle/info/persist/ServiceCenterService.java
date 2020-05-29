@@ -8,12 +8,20 @@ import ua.vehicle.info.aspects.annotations.SuppressRuntimeExceptions;
 import ua.vehicle.info.dto.registration.ServiceCenterDto;
 import ua.vehicle.info.persist.repository.registration.ServiceCenterJdbcRepository;
 
+/**
+ * The type Service center service.
+ */
 @Service
 @RequiredArgsConstructor
 public class ServiceCenterService {
 
     private final ServiceCenterJdbcRepository repository;
 
+    /**
+     * Save.
+     *
+     * @param obj the obj
+     */
     @SuppressRuntimeExceptions
     @LogExceptions
     public void save(ServiceCenterDto obj) {

@@ -28,9 +28,23 @@ import ua.vehicle.info.persist.chain.vehicle.KindDtoHandler;
 import ua.vehicle.info.persist.chain.vehicle.ModelDtoHandler;
 import ua.vehicle.info.persist.chain.vehicle.VehicleDtoHandler;
 
+/**
+ * The type Beans config.
+ */
 @Configuration
 public class BeansConfig {
 
+    /**
+     * Admin unit record on message listener on message listener.
+     *
+     * @param mapper the mapper
+     * @param lev1Handler the lev 1 handler
+     * @param lev2Handler the lev 2 handler
+     * @param lev3Handler the lev 3 handler
+     * @param lev4Handler the lev 4 handler
+     *
+     * @return the on message listener
+     */
     @Bean
     public OnMessageListener<AdminUnitRecord> adminUnitRecordOnMessageListener(AdminUnitDtoMapper mapper,
             SaveAdminUnitWithLev1Handler lev1Handler,
@@ -43,12 +57,37 @@ public class BeansConfig {
         return new AdminUnitPersistListener(mapper, lev4Handler);
     }
 
+    /**
+     * Service center record on message listener on message listener.
+     *
+     * @param mapper the mapper
+     * @param service the service
+     *
+     * @return the on message listener
+     */
     @Bean
     public OnMessageListener<ServiceCenterRecord> serviceCenterRecordOnMessageListener(ServiceCenterDtoMapper mapper,
             ServiceCenterService service) {
         return new ServiceCenterPersistListener(mapper, service);
     }
 
+    /**
+     * Registration record on message listener on message listener.
+     *
+     * @param bodyTypeDtoHandler the body type dto handler
+     * @param brandDtoHandler the brand dto handler
+     * @param colorDtoHandler the color dto handler
+     * @param fuelTypeDtoHandler the fuel type dto handler
+     * @param kindDtoHandler the kind dto handler
+     * @param modelDtoHandler the model dto handler
+     * @param vehicleDtoHandler the vehicle dto handler
+     * @param departmentDtoHandler the department dto handler
+     * @param operationDtoHandler the operation dto handler
+     * @param purposeDtoHandler the purpose dto handler
+     * @param registrationDtoHandler the registration dto handler
+     *
+     * @return the on message listener
+     */
     @Bean
     public OnMessageListener<RegistrationRecord> registrationRecordOnMessageListener(
             BodyTypeDtoHandler bodyTypeDtoHandler,

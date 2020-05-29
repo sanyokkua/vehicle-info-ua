@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 import ua.vehicle.info.dto.vehicle.ColorDto;
 import ua.vehicle.info.persist.repository.InsertFunctionalityRepository;
 
+/**
+ * The interface Color jdbc repository.
+ */
 @Repository
 public interface ColorJdbcRepository extends CrudRepository<ColorDto, String>,
         InsertFunctionalityRepository<ColorDto> {

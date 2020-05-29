@@ -5,11 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * The type Auth token dto.
+ */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthTokeDto {
+public class AuthTokenDto {
 
     private String token;
 }

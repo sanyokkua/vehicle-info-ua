@@ -13,6 +13,9 @@ import ua.vehicle.info.aspects.annotations.LogTimeMeasures;
 import ua.vehicle.info.dto.ServiceCenterRecord;
 import ua.vehicle.info.processing.processor.Task;
 
+/**
+ * The type Parse service centers task.
+ */
 public class ParseServiceCentersTask implements Task<Elements, Iterator<ServiceCenterRecord>> {
 
     private static final Pattern DIGITS_ONLY = Pattern.compile("\\d+");

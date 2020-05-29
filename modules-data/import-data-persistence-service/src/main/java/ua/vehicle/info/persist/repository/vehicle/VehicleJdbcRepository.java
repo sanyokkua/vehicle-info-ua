@@ -8,6 +8,9 @@ import org.springframework.stereotype.Repository;
 import ua.vehicle.info.dto.vehicle.VehicleDto;
 import ua.vehicle.info.persist.repository.InsertFunctionalityRepository;
 
+/**
+ * The interface Vehicle jdbc repository.
+ */
 @Repository
 public interface VehicleJdbcRepository extends CrudRepository<VehicleDto, Long>,
         InsertFunctionalityRepository<VehicleDto> {
@@ -16,6 +19,22 @@ public interface VehicleJdbcRepository extends CrudRepository<VehicleDto, Long>,
     @Override
     boolean existsById(Long aLong);
 
+    /**
+     * Find by fields vehicle dto.
+     *
+     * @param brand the brand
+     * @param model the model
+     * @param body the body
+     * @param kind the kind
+     * @param fuel the fuel
+     * @param color the color
+     * @param engineCapacity the engine capacity
+     * @param makeYear the make year
+     * @param ownWeight the own weight
+     * @param totalWeight the total weight
+     *
+     * @return the vehicle dto
+     */
     @Query("select * from ua_vehicle_info.vehicle v where "
             + "v.model like :model and "
             + "v.body like :body and "
@@ -39,6 +58,13 @@ public interface VehicleJdbcRepository extends CrudRepository<VehicleDto, Long>,
             @Param("total_weight") Integer totalWeight
     );
 
+    /**
+     * Find vehicle vehicle dto.
+     *
+     * @param dto the dto
+     *
+     * @return the vehicle dto
+     */
     @Cacheable(cacheNames = "findVehicle", unless = "#result == null", key = "#dto.hashCode()")
     default VehicleDto findVehicle(VehicleDto dto) {
         return findByFields(dto.getBrand(),

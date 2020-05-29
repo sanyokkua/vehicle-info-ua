@@ -17,10 +17,18 @@ import ua.vehicle.info.processing.persistance.Persister;
 import ua.vehicle.info.processing.processor.tasks.PersistRecordTask;
 import ua.vehicle.info.queues.sender.QueueSenderService;
 
+/**
+ * The type Beans configuration.
+ */
 @Slf4j
 @Configuration
 public class BeansConfiguration {
 
+    /**
+     * Retry policy retry policy.
+     *
+     * @return the retry policy
+     */
     @Bean
     public RetryPolicy<Object> retryPolicy() {
         return new RetryPolicy<>()
@@ -34,21 +42,46 @@ public class BeansConfiguration {
                 .onAbort(e -> log.warn("Connection aborted due to {}.", e.getFailure().toString(), e.getFailure()));
     }
 
+    /**
+     * Gets html document.
+     *
+     * @param retryPolicy the retry policy
+     *
+     * @return the html document
+     */
     @Bean
     public GetHtmlDocumentTask getHtmlDocument(RetryPolicy<Object> retryPolicy) {
         return new GetHtmlDocumentTask(retryPolicy);
     }
 
+    /**
+     * Gets html element with list.
+     *
+     * @return the html element with list
+     */
     @Bean
     public GetHtmlElementWithListTask getHtmlElementWithList() {
         return new GetHtmlElementWithListTask();
     }
 
+    /**
+     * Parse service centers parse service centers task.
+     *
+     * @return the parse service centers task
+     */
     @Bean
     public ParseServiceCentersTask parseServiceCenters() {
         return new ParseServiceCentersTask();
     }
 
+    /**
+     * Persist record task persist record task.
+     *
+     * @param inputMapper the input mapper
+     * @param persister the persister
+     *
+     * @return the persist record task
+     */
     @Bean
     public PersistRecordTask<ServiceCenterRecord, ServiceCenterRecord> persistRecordTask(
             InputMapper<ServiceCenterRecord, ServiceCenterRecord> inputMapper,
@@ -56,11 +89,23 @@ public class BeansConfiguration {
         return new PersistRecordTask<>(inputMapper, persister);
     }
 
+    /**
+     * Mapper input mapper.
+     *
+     * @return the input mapper
+     */
     @Bean
     public InputMapper<ServiceCenterRecord, ServiceCenterRecord> mapper() {
         return serviceCenter -> serviceCenter;
     }
 
+    /**
+     * Persister persister.
+     *
+     * @param queueSenderService the queue sender service
+     *
+     * @return the persister
+     */
     @Bean
     public Persister<ServiceCenterRecord> persister(QueueSenderService queueSenderService) {
         return new ServiceCenterPersister(queueSenderService);

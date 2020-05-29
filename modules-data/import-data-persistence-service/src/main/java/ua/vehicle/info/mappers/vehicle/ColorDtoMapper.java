@@ -6,6 +6,9 @@ import ua.vehicle.info.dto.RegistrationRecord;
 import ua.vehicle.info.dto.vehicle.ColorDto;
 import ua.vehicle.info.mappers.DefaultMapperForRegistrationType;
 
+/**
+ * The interface Color dto mapper.
+ */
 @Mapper(componentModel = "spring")
 public interface ColorDtoMapper extends DefaultMapperForRegistrationType<ColorDto> {
 

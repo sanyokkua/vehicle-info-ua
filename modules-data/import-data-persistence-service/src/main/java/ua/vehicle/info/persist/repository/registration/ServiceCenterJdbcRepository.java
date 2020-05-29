@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 import ua.vehicle.info.dto.registration.ServiceCenterDto;
 import ua.vehicle.info.persist.repository.InsertFunctionalityRepository;
 
+/**
+ * The interface Service center jdbc repository.
+ */
 @Repository
 public interface ServiceCenterJdbcRepository extends CrudRepository<ServiceCenterDto, Long>,
         InsertFunctionalityRepository<ServiceCenterDto> {

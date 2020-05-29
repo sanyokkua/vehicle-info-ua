@@ -9,10 +9,19 @@ import ua.vehicle.info.dto.AdminUnitRecord;
 import ua.vehicle.info.listeners.OnMessageListener;
 import ua.vehicle.info.receivers.AbstractReceiver;
 
+/**
+ * The type Admin unit receiver.
+ */
 @Slf4j
 @Service
 public class AdminUnitReceiver extends AbstractReceiver<AdminUnitRecord> {
 
+    /**
+     * Instantiates a new Admin unit receiver.
+     *
+     * @param gson the gson
+     * @param listener the listener
+     */
     public AdminUnitReceiver(Gson gson, OnMessageListener<AdminUnitRecord> listener) {
         super(gson, listener);
     }

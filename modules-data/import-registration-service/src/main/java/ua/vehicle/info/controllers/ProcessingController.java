@@ -12,6 +12,9 @@ import ua.vehicle.info.aspects.annotations.LogExceptions;
 import ua.vehicle.info.aspects.annotations.LogInputOutput;
 import ua.vehicle.info.processing.RegistrationProcessing;
 
+/**
+ * The type Processing controller.
+ */
 @RestController
 @RequiredArgsConstructor
 public class ProcessingController extends AbstractProcessingController {

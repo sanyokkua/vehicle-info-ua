@@ -9,12 +9,22 @@ import ua.vehicle.info.persist.chain.RegistrationRecordHandler;
 import ua.vehicle.info.persist.repository.registration.DepartmentJdbcRepository;
 import ua.vehicle.info.queues.sender.QueueSenderService;
 
+/**
+ * The type Department dto handler.
+ */
 @Component
 public class DepartmentDtoHandler extends RegistrationRecordHandler {
 
     private final DepartmentDtoMapper mapper;
     private final DepartmentJdbcRepository repository;
 
+    /**
+     * Instantiates a new Department dto handler.
+     *
+     * @param queueSenderService the queue sender service
+     * @param mapper the mapper
+     * @param repository the repository
+     */
     public DepartmentDtoHandler(QueueSenderService queueSenderService,
             DepartmentDtoMapper mapper,
             DepartmentJdbcRepository repository) {

@@ -9,12 +9,22 @@ import ua.vehicle.info.persist.chain.RegistrationRecordHandler;
 import ua.vehicle.info.persist.repository.vehicle.FuelTypeJdbcRepository;
 import ua.vehicle.info.queues.sender.QueueSenderService;
 
+/**
+ * The type Fuel type dto handler.
+ */
 @Component
 public class FuelTypeDtoHandler extends RegistrationRecordHandler {
 
     private final FuelTypeDtoMapper mapper;
     private final FuelTypeJdbcRepository repository;
 
+    /**
+     * Instantiates a new Fuel type dto handler.
+     *
+     * @param queueSenderService the queue sender service
+     * @param mapper the mapper
+     * @param repository the repository
+     */
     public FuelTypeDtoHandler(QueueSenderService queueSenderService,
             FuelTypeDtoMapper mapper, FuelTypeJdbcRepository repository) {
         super(queueSenderService);

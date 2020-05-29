@@ -6,6 +6,9 @@ import ua.vehicle.info.aspects.annotations.LogExceptions;
 import ua.vehicle.info.dto.RegistrationRecord;
 import ua.vehicle.info.persist.chain.Handler;
 
+/**
+ * The type Registration persist listener.
+ */
 @Slf4j
 @RequiredArgsConstructor
 public class RegistrationPersistListener implements OnMessageListener<RegistrationRecord> {

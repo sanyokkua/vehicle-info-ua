@@ -7,16 +7,31 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
+/**
+ * The type Suppress runtime exceptions aspect.
+ */
 @Slf4j
 @Aspect
 @Component
 public class SuppressRuntimeExceptionsAspect extends CommonAspect {
 
+    /**
+     * Suppress.
+     */
     @Pointcut("@annotation(ua.vehicle.info.aspects.annotations.LogExceptions)")
     public void suppress() {
         // Empty because it is just creation of Pointcut
     }
 
+    /**
+     * Measure execution time object.
+     *
+     * @param joinPoint the join point
+     *
+     * @return the object
+     *
+     * @throws Throwable the throwable
+     */
     @Around("suppress()")
     public Object measureExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
         try {

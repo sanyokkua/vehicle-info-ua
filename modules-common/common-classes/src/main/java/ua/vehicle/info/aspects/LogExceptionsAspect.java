@@ -7,16 +7,28 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
+/**
+ * The type Log exceptions aspect.
+ */
 @Slf4j
 @Aspect
 @Component
 public class LogExceptionsAspect extends CommonAspect {
 
+    /**
+     * Log exceptions.
+     */
     @Pointcut("@annotation(ua.vehicle.info.aspects.annotations.LogExceptions)")
     public void logExceptions() {
         // Empty because it is just creation of Pointcut
     }
 
+    /**
+     * After exception.
+     *
+     * @param joinPoint the join point
+     * @param ex the ex
+     */
     @AfterThrowing(pointcut = "logExceptions()", throwing = "ex")
     public void afterException(JoinPoint joinPoint, Exception ex) {
         var info = getJointPointInfo(joinPoint);

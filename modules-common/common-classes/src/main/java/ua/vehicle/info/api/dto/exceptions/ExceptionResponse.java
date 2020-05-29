@@ -9,6 +9,9 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import ua.vehicle.info.api.dto.Response;
 
+/**
+ * The type Exception response.
+ */
 @Data
 @Builder
 @NoArgsConstructor

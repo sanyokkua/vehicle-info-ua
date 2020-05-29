@@ -7,33 +7,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import ua.vehicle.info.api.controllers.registrations.manage.SearchManagementApi;
 import ua.vehicle.info.api.dto.Response;
-import ua.vehicle.info.api.dto.authentication.AuthTokeDto;
+import ua.vehicle.info.api.dto.authentication.AuthTokenDto;
 import ua.vehicle.info.api.dto.search.SearchQueryDto;
 
+/**
+ * The type Vehicle search rest controller.
+ */
 @RestController
 public class VehicleSearchRestController implements SearchManagementApi {
 
     @PostMapping(SAVE_QUERY)
     @Override
-    public Response saveQuery(SearchQueryDto queryDto, @RequestBody AuthTokeDto authTokeDto) {
+    public Response saveQuery(SearchQueryDto queryDto, @RequestBody AuthTokenDto authTokenDto) {
         return null;
     }
 
     @GetMapping(QUERY_ID)
     @Override
-    public SearchQueryDto loadQuery(String id, @RequestBody AuthTokeDto authTokeDto) {
+    public SearchQueryDto loadQuery(String id, @RequestBody AuthTokenDto authTokenDto) {
         return null;
     }
 
     @GetMapping(GET_ALL_QUERIES)
     @Override
-    public Response getAllQueries(@RequestBody AuthTokeDto authTokeDto) {
+    public Response getAllQueries(@RequestBody AuthTokenDto authTokenDto) {
         return null;
     }
 
     @DeleteMapping(QUERY_ID)
     @Override
-    public Response deleteQuery(String id, @RequestBody AuthTokeDto authTokeDto) {
+    public Response deleteQuery(String id, @RequestBody AuthTokenDto authTokenDto) {
         return null;
     }
 }

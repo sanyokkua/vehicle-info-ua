@@ -7,6 +7,9 @@ import ua.vehicle.info.queues.enums.QueueExchange;
 import ua.vehicle.info.queues.enums.QueueTopic;
 import ua.vehicle.info.queues.sender.QueueSenderService;
 
+/**
+ * The type Registration record handler.
+ */
 @RequiredArgsConstructor
 public abstract class RegistrationRecordHandler extends BaseHandler<RegistrationRecord> {
 

@@ -5,10 +5,18 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 
+/**
+ * The type App configuration.
+ */
 @EnableSpringDataWebSupport
 @Configuration
 public class AppConfiguration {
 
+    /**
+     * Password encoder pbkdf 2 password encoder.
+     *
+     * @return the pbkdf 2 password encoder
+     */
     @Bean
     public Pbkdf2PasswordEncoder passwordEncoder() {
         return new Pbkdf2PasswordEncoder();

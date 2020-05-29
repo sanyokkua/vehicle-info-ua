@@ -4,6 +4,11 @@ import java.util.Objects;
 import lombok.extern.slf4j.Slf4j;
 import ua.vehicle.info.aspects.annotations.LogInputOutput;
 
+/**
+ * The type Base handler.
+ *
+ * @param <T> the type parameter
+ */
 @Slf4j
 public abstract class BaseHandler<T> implements Handler<T> {
 
@@ -29,7 +34,17 @@ public abstract class BaseHandler<T> implements Handler<T> {
         }
     }
 
+    /**
+     * Handle exception.
+     *
+     * @param obj the obj
+     */
     protected abstract void handleException(T obj);
 
+    /**
+     * Process.
+     *
+     * @param obj the obj
+     */
     protected abstract void process(T obj);
 }

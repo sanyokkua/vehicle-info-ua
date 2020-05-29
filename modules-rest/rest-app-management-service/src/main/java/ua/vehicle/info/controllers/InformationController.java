@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 import ua.vehicle.info.api.controllers.management.ServicesStatusApi;
 import ua.vehicle.info.services.ServicesInformationService;
 
+/**
+ * The type Information controller.
+ */
 @RestController
 @RequiredArgsConstructor
 public class InformationController implements ServicesStatusApi {

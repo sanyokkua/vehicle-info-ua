@@ -11,12 +11,20 @@ import ua.vehicle.info.aspects.annotations.LogInputOutput;
 import ua.vehicle.info.aspects.annotations.SuppressRuntimeExceptions;
 import ua.vehicle.info.discovery.Services;
 
+/**
+ * The type Services information service.
+ */
 @Service
 @RequiredArgsConstructor
 public class ServicesInformationService {
 
     private final DiscoveryClient discoveryClient;
 
+    /**
+     * Gets app services.
+     *
+     * @return the app services
+     */
     @LogExceptions
     @LogInputOutput
     @SuppressRuntimeExceptions
@@ -27,6 +35,11 @@ public class ServicesInformationService {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Gets running app services.
+     *
+     * @return the running app services
+     */
     @LogExceptions
     @LogInputOutput
     @SuppressRuntimeExceptions

@@ -9,16 +9,31 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
+/**
+ * The type Log execution time aspect.
+ */
 @Slf4j
 @Aspect
 @Component
 public class LogExecutionTimeAspect extends CommonAspect {
 
+    /**
+     * Log execution time.
+     */
     @Pointcut("@annotation(ua.vehicle.info.aspects.annotations.LogTimeMeasures)")
     public void logExecutionTime() {
         // Empty because it is just creation of Pointcut
     }
 
+    /**
+     * Measure execution time object.
+     *
+     * @param joinPoint the join point
+     *
+     * @return the object
+     *
+     * @throws Throwable the throwable
+     */
     @Around("logExecutionTime()")
     public Object measureExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
         var start = LocalTime.now();

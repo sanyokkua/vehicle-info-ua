@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 import ua.vehicle.info.dto.registration.AdminUnitDto;
 import ua.vehicle.info.persist.repository.InsertFunctionalityRepository;
 
+/**
+ * The interface Admin unit jdbc repository.
+ */
 @Repository
 public interface AdminUnitJdbcRepository extends CrudRepository<AdminUnitDto, String>,
         InsertFunctionalityRepository<AdminUnitDto> {

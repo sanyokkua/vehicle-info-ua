@@ -6,6 +6,9 @@ import ua.vehicle.info.dto.AdminUnitRecord;
 import ua.vehicle.info.dto.registration.AdminUnitDto;
 import ua.vehicle.info.mappers.DefaultMappersForTypes;
 
+/**
+ * The interface Admin unit dto mapper.
+ */
 @Mapper(componentModel = "spring")
 public interface AdminUnitDtoMapper extends DefaultMappersForTypes<AdminUnitRecord, AdminUnitDto> {
 

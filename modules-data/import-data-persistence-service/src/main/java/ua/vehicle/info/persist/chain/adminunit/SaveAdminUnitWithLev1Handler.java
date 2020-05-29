@@ -6,9 +6,17 @@ import ua.vehicle.info.aspects.annotations.LogExceptions;
 import ua.vehicle.info.dto.registration.AdminUnitDto;
 import ua.vehicle.info.persist.repository.registration.AdminUnitJdbcRepository;
 
+/**
+ * The type Save admin unit with lev 1 handler.
+ */
 @Component
 public class SaveAdminUnitWithLev1Handler extends AdminUnitHandler {
 
+    /**
+     * Instantiates a new Save admin unit with lev 1 handler.
+     *
+     * @param repository the repository
+     */
     public SaveAdminUnitWithLev1Handler(AdminUnitJdbcRepository repository) {
         super(repository);
     }

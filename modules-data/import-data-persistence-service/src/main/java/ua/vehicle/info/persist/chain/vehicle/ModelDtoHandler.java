@@ -9,12 +9,22 @@ import ua.vehicle.info.persist.chain.RegistrationRecordHandler;
 import ua.vehicle.info.persist.repository.vehicle.ModelJdbcRepository;
 import ua.vehicle.info.queues.sender.QueueSenderService;
 
+/**
+ * The type Model dto handler.
+ */
 @Component
 public class ModelDtoHandler extends RegistrationRecordHandler {
 
     private final ModelDtoMapper mapper;
     private final ModelJdbcRepository repository;
 
+    /**
+     * Instantiates a new Model dto handler.
+     *
+     * @param queueSenderService the queue sender service
+     * @param mapper the mapper
+     * @param repository the repository
+     */
     public ModelDtoHandler(QueueSenderService queueSenderService, ModelDtoMapper mapper,
             ModelJdbcRepository repository) {
         super(queueSenderService);

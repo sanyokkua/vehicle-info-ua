@@ -11,6 +11,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * The type User model.
+ */
 @Data
 @Builder
 @AllArgsConstructor

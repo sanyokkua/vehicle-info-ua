@@ -10,6 +10,9 @@ import ua.vehicle.info.processing.processor.tasks.DeleteFilesTask;
 import ua.vehicle.info.processing.processor.tasks.DownloadFileTask;
 import ua.vehicle.info.processing.processor.tasks.PersistRecordTask;
 
+/**
+ * The type Admin unit processing.
+ */
 @Component
 @RequiredArgsConstructor
 public class AdminUnitProcessing extends Processor {

@@ -6,6 +6,9 @@ import ua.vehicle.info.dto.RegistrationRecord;
 import ua.vehicle.info.dto.vehicle.BodyTypeDto;
 import ua.vehicle.info.mappers.DefaultMapperForRegistrationType;
 
+/**
+ * The interface Body type dto mapper.
+ */
 @Mapper(componentModel = "spring")
 public interface BodyTypeDtoMapper extends DefaultMapperForRegistrationType<BodyTypeDto> {
 

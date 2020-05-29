@@ -9,12 +9,22 @@ import ua.vehicle.info.persist.chain.RegistrationRecordHandler;
 import ua.vehicle.info.persist.repository.vehicle.ColorJdbcRepository;
 import ua.vehicle.info.queues.sender.QueueSenderService;
 
+/**
+ * The type Color dto handler.
+ */
 @Component
 public class ColorDtoHandler extends RegistrationRecordHandler {
 
     private final ColorDtoMapper mapper;
     private final ColorJdbcRepository repository;
 
+    /**
+     * Instantiates a new Color dto handler.
+     *
+     * @param queueSenderService the queue sender service
+     * @param mapper the mapper
+     * @param repository the repository
+     */
     public ColorDtoHandler(QueueSenderService queueSenderService, ColorDtoMapper mapper,
             ColorJdbcRepository repository) {
         super(queueSenderService);

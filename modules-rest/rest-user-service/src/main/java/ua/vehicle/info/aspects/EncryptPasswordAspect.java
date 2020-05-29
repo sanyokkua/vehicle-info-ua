@@ -11,6 +11,9 @@ import org.springframework.stereotype.Component;
 import ua.vehicle.info.model.UserModel;
 import ua.vehicle.info.utils.UserModelPasswordUtils;
 
+/**
+ * The type Encrypt password aspect.
+ */
 @Slf4j
 @Component
 @Aspect
@@ -19,11 +22,23 @@ public class EncryptPasswordAspect {
 
     private final UserModelPasswordUtils userModelPasswordUtils;
 
+    /**
+     * Encrypt password.
+     */
     @Pointcut("@annotation(ua.vehicle.info.aspects.EncryptPassword)")
     public void encryptPassword() {
         // Empty because it is just creation of Pointcut
     }
 
+    /**
+     * Before object.
+     *
+     * @param joinPoint the join point
+     *
+     * @return the object
+     *
+     * @throws Throwable the throwable
+     */
     @Around("encryptPassword()")
     public Object before(ProceedingJoinPoint joinPoint) throws Throwable {
         log.info("Password will be encrypted inside jointPoint");

@@ -7,6 +7,9 @@ import ua.vehicle.info.api.controllers.registrations.search.RegistrationSearchAp
 import ua.vehicle.info.api.dto.search.SearchQueryDto;
 import ua.vehicle.info.api.dto.search.SearchResults;
 
+/**
+ * The type Search rest controller.
+ */
 @RestController
 public class SearchRestController implements RegistrationSearchApi {
 

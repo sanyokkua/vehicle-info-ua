@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 import ua.vehicle.info.dto.vehicle.KindDto;
 import ua.vehicle.info.persist.repository.InsertFunctionalityRepository;
 
+/**
+ * The interface Kind jdbc repository.
+ */
 @Repository
 public interface KindJdbcRepository extends CrudRepository<KindDto, String>,
         InsertFunctionalityRepository<KindDto> {

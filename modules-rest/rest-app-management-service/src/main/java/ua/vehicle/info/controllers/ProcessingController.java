@@ -9,6 +9,9 @@ import ua.vehicle.info.api.controllers.management.ImportManagementApi;
 import ua.vehicle.info.api.dto.processing.ProcessingStatus;
 import ua.vehicle.info.services.ProcessingService;
 
+/**
+ * The type Processing controller.
+ */
 @RestController
 @RequiredArgsConstructor
 public class ProcessingController implements ImportManagementApi {

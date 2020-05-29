@@ -12,6 +12,9 @@ import ua.vehicle.info.external.AdminUnitProcessing;
 import ua.vehicle.info.external.RegistrationProcessing;
 import ua.vehicle.info.external.ServiceCenterProcessing;
 
+/**
+ * The type Processing service.
+ */
 @Service
 @RequiredArgsConstructor
 public class ProcessingService {
@@ -20,6 +23,13 @@ public class ProcessingService {
     private final RegistrationProcessing registrationProcessing;
     private final ServiceCenterProcessing serviceCenterProcessing;
 
+    /**
+     * Start service processing status.
+     *
+     * @param serviceName the service name
+     *
+     * @return the processing status
+     */
     @LogExceptions
     @LogInputOutput
     public ProcessingStatus startService(@NonNull String serviceName) {
@@ -27,6 +37,13 @@ public class ProcessingService {
         return service.startProcessing();
     }
 
+    /**
+     * Gets status.
+     *
+     * @param serviceName the service name
+     *
+     * @return the status
+     */
     @LogExceptions
     @LogInputOutput
     public ProcessingStatus getStatus(@NonNull String serviceName) {

@@ -10,6 +10,9 @@ import ua.vehicle.info.aspects.annotations.LogExceptions;
 import ua.vehicle.info.dto.RegistrationRecord;
 import ua.vehicle.info.processing.mappers.InputMapper;
 
+/**
+ * The type Csv record to registration input mapper.
+ */
 @RequiredArgsConstructor
 @Slf4j
 public class CsvRecordToRegistrationInputMapper implements InputMapper<CSVRecord, RegistrationRecord> {

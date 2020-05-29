@@ -10,6 +10,9 @@ import ua.vehicle.info.aspects.annotations.SuppressRuntimeExceptions;
 import ua.vehicle.info.queues.enums.QueueExchange;
 import ua.vehicle.info.queues.enums.QueueTopic;
 
+/**
+ * The type Queue sender service.
+ */
 @Service
 @RequiredArgsConstructor
 public class QueueSenderService {
@@ -17,6 +20,13 @@ public class QueueSenderService {
     private final RabbitTemplate rabbitTemplate;
     private final Gson gson;
 
+    /**
+     * Send message.
+     *
+     * @param message the message
+     * @param exchange the exchange
+     * @param topic the topic
+     */
     @LogExceptions
     @SuppressRuntimeExceptions
     public void sendMessage(@NonNull Object message,

@@ -7,11 +7,22 @@ import ua.vehicle.info.aspects.annotations.LogExceptions;
 import ua.vehicle.info.aspects.annotations.SuppressRuntimeExceptions;
 import ua.vehicle.info.listeners.OnMessageListener;
 
+/**
+ * The type Abstract receiver.
+ *
+ * @param <T> the type parameter
+ */
 @Slf4j
 @RequiredArgsConstructor
 public abstract class AbstractReceiver<T> implements Receiver<T> {
 
+    /**
+     * The Gson.
+     */
     protected final Gson gson;
+    /**
+     * The Listener.
+     */
     protected final OnMessageListener<T> listener;
 
     @LogExceptions

@@ -23,6 +23,9 @@ import ua.vehicle.info.dto.ResourceDataPackage;
 import ua.vehicle.info.processing.processor.Task;
 import ua.vehicle.info.services.FileUtilsService;
 
+/**
+ * The type Parse urls from json task.
+ */
 @Slf4j
 @RequiredArgsConstructor
 public class ParseUrlsFromJsonTask implements Task<Path, List<URL>> {

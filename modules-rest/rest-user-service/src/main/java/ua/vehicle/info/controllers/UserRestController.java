@@ -20,6 +20,9 @@ import ua.vehicle.info.mappers.AppUserToUserModelMapper;
 import ua.vehicle.info.model.UserModel;
 import ua.vehicle.info.services.UserService;
 
+/**
+ * The type User rest controller.
+ */
 @RestController
 @RequiredArgsConstructor
 public class UserRestController implements UserManagementApi {

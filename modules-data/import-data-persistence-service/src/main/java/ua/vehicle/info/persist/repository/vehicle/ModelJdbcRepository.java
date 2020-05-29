@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 import ua.vehicle.info.dto.vehicle.ModelDto;
 import ua.vehicle.info.persist.repository.InsertFunctionalityRepository;
 
+/**
+ * The interface Model jdbc repository.
+ */
 @Repository
 public interface ModelJdbcRepository extends CrudRepository<ModelDto, String>,
         InsertFunctionalityRepository<ModelDto> {

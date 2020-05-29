@@ -14,10 +14,16 @@ import ua.vehicle.info.aspects.annotations.LogTimeMeasures;
 import ua.vehicle.info.processing.processor.Task;
 import ua.vehicle.info.services.FileUtilsService;
 
+/**
+ * The type Unzip task.
+ */
 @Slf4j
 @RequiredArgsConstructor
 public class UnzipTask implements Task<Path, Path> {
 
+    /**
+     * The File utils service.
+     */
     protected final FileUtilsService fileUtilsService;
 
     @LogTimeMeasures

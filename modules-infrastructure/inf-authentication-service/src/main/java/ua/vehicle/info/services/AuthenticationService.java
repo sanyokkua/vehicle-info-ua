@@ -1,14 +1,38 @@
 package ua.vehicle.info.services;
 
-import ua.vehicle.info.api.dto.authentication.AuthTokeDto;
+import ua.vehicle.info.api.dto.authentication.AuthTokenDto;
 import ua.vehicle.info.api.dto.authentication.AuthUserCredentialsDto;
 import ua.vehicle.info.api.dto.users.AppRole;
 
+/**
+ * The interface Authentication service.
+ */
 public interface AuthenticationService {
 
-    AuthTokeDto authenticate(AuthUserCredentialsDto authUserCredentialsDto);
+    /**
+     * Authenticate auth toke dto.
+     *
+     * @param authUserCredentialsDto the auth user credentials dto
+     *
+     * @return the auth toke dto
+     */
+    AuthTokenDto authenticate(AuthUserCredentialsDto authUserCredentialsDto);
 
-    boolean checkIsValid(AuthTokeDto tokeDto);
+    /**
+     * Check is valid boolean.
+     *
+     * @param tokeDto the toke dto
+     *
+     * @return the boolean
+     */
+    boolean checkIsValid(AuthTokenDto tokeDto);
 
-    AppRole getRoleForAuthentication(AuthTokeDto tokeDto);
+    /**
+     * Gets role for authentication.
+     *
+     * @param tokeDto the toke dto
+     *
+     * @return the role for authentication
+     */
+    AppRole getRoleForAuthentication(AuthTokenDto tokeDto);
 }

@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * The type Resource data package.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

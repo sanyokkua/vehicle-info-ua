@@ -19,6 +19,9 @@ import ua.vehicle.info.processing.processor.tasks.PersistRecordTask;
 import ua.vehicle.info.processing.processor.tasks.ReadCsvFileTask;
 import ua.vehicle.info.processing.processor.tasks.UnzipTask;
 
+/**
+ * The type Registration processing.
+ */
 @Component
 @RequiredArgsConstructor
 public class RegistrationProcessing extends Processor {

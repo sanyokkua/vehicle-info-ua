@@ -15,19 +15,40 @@ import ua.vehicle.info.queues.enums.QueueTopic;
 import ua.vehicle.info.queues.enums.Queues;
 import ua.vehicle.info.receivers.implementations.ServiceCenterReceiver;
 
+/**
+ * The type Service center queue config.
+ */
 @Configuration
 public class ServiceCenterQueueConfig {
 
+    /**
+     * Queue queue.
+     *
+     * @return the queue
+     */
     @Bean("serviceCenterQueue")
     public Queue queue() {
         return new Queue(Queues.QUEUE_SERVICE_CENTER.getQueue(), false);
     }
 
+    /**
+     * Exchange topic exchange.
+     *
+     * @return the topic exchange
+     */
     @Bean("serviceCenterExchange")
     public TopicExchange exchange() {
         return new TopicExchange(QueueExchange.VEHICLE_SERVICE_CENTER.getExchange());
     }
 
+    /**
+     * Binding binding.
+     *
+     * @param queue the queue
+     * @param exchange the exchange
+     *
+     * @return the binding
+     */
     @Bean("serviceCenterBinding")
     public Binding binding(@Qualifier("serviceCenterQueue") Queue queue,
             @Qualifier("serviceCenterExchange") TopicExchange exchange) {
@@ -37,6 +58,14 @@ public class ServiceCenterQueueConfig {
                 .with(QueueTopic.TOPIC_SERVICE_CENTER.getRoute());
     }
 
+    /**
+     * Container simple message listener container.
+     *
+     * @param connectionFactory the connection factory
+     * @param listenerAdapter the listener adapter
+     *
+     * @return the simple message listener container
+     */
     @Bean("serviceCenterContainer")
     public SimpleMessageListenerContainer container(ConnectionFactory connectionFactory,
             @Qualifier("serviceCenterListenerAdapter") MessageListenerAdapter listenerAdapter) {
@@ -47,6 +76,13 @@ public class ServiceCenterQueueConfig {
         return container;
     }
 
+    /**
+     * Listener adapter message listener adapter.
+     *
+     * @param receiver the receiver
+     *
+     * @return the message listener adapter
+     */
     @Bean("serviceCenterListenerAdapter")
     public MessageListenerAdapter listenerAdapter(ServiceCenterReceiver receiver) {
         return new MessageListenerAdapter(receiver, "process");
